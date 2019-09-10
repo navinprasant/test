@@ -1,0 +1,82 @@
+<!-- <mat-card class="signin-card">
+    <mat-card-content>	
+        <i class="material-icons">
+                account_circle
+        </i>
+        <div class="sign-in-bold-text">Sign in to Submit KYC</div>
+        <div>Sign in your account with registered mobile <br> number</div>
+        <div fxLayout="row" fxLayoutGap="20px">
+                <mat-form-field style="width:30%;">
+                        <mat-label>search For country</mat-label>
+                        <mat-select (selectionChange)="changeCountry($event.value)">
+                          <mat-option *ngFor="let code of countryCodes" [value]="code.viewValue">
+                              {{ code.value }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <mat-form-field style=" width:60%;padding-left: 20px;">
+                            <input matInput placeholder="Enter Mobile Number" name="phone" [(ngModel)]="mobileNumber" (change)="mobileNumberChanged()">
+                      </mat-form-field> 
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-end" style="margin-top: 50px;">
+            <button mat-raised-button class="next-button" [disabled]="btndisable" (click)="formSubmit()">Next</button>
+        </div>
+    </mat-card-content>
+    <mat-card-footer style="margin-top:50px;">
+        By signing up, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+    </mat-card-footer>
+
+</mat-card> -->
+<div class="login-div">
+    <img class="emoji-bg-one" src="assets/icons/emoji-bg-one.svg">
+    <img class="emoji-bg-two" src="assets/icons/emoji-bg-two.svg">
+    <img class="emoji-bg-three" src="assets/icons/emoji-bg-three.svg">
+    <img class="emoji-bg-four" src="assets/icons/emoji-bg-four.svg">
+    <!-- <md-progress-circular class="action-loader" md-mode="indeterminate" ng-hide="actionLoader"></md-progress-circular> -->
+    <!-- <div fxLayout="column" fxLayoutGap="20px" style="margin-top: 30px;">  
+        </div> -->
+
+    <mat-card class="signin-card login-card" fxLayout="column" fxLayoutGap="20px" style="margin-top: 30px;">
+        <mat-card-content>
+            <img src="assets/icons/logo-diro-kyc.svg" class="login-diro-logo">
+            <div class="sign-in-bold-text">{{ 'login_page.bold_text' | translate }}</div>
+            <div> {{'login_page.text' | translate}} </div>
+            <form name="projectForm">
+                <div fxLayout="row" fxLayoutGap="20px">
+                    <mat-form-field class="country-code" floatLabel="never" style="width:30%">
+                        <mat-select (selectionChange)="changeCountry($event.value)"
+                           placeholder="Country Code" [(value)]="mcc" (click) ="showDropdown()"
+                        >
+                            <mat-option *ngFor="let country of countryJson" [value]="country.mcc">
+                                <div style="width:100% " *ngIf="open">
+                                  <span>{{country.country}}</span> &nbsp;<span style="float: right;">{{country.mcc}}</span>
+                                </div>
+                                <span *ngIf="!open">{{ country.mcc }} </span>
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="country-code" floatLabel="never" style=" width:60%;">
+                        <input matInput placeholder="{{'login_page.input_label' | translate}}" name="mobile" [(ngModel)]="mobile"
+                            (input)="mobileChanged()">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="flex-end" style="margin-top: 50px;">
+                    <button mat-raised-button class="next-button" [disabled]="btndisable"
+                        (click)="verifyOTP()" [ngStyle]="{'background-color':nextBtnBgColor}">{{'Common_all_page.next_button' | translate}}</button>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-footer style="margin-top:50px;">
+            <div class ="terms-privacy-text" style="margin-top: 15px;">{{'login_page.terms_privacy_text' | translate}}&nbsp;<a href="/termsOfService">{{'login_page.terms_of_service' | translate}}</a> {{'login_page.and_text' | translate}}&nbsp;<a href="/privacyPolicy">{{'login_page.privacy_policy' | translate}}</a></div>
+        </mat-card-footer>
+    </mat-card>
+    <footer class="copy-right-text-bottom">
+        <div fxLayout="row" fxLayoutAlign="center">
+            <img src="assets/images/img-appstore.png" width="120" height="35" style="margin-right: 10px">
+            <img src="assets/images/img-playstore.png" width="120" height="35" style="margin-left: 10px">
+        </div><br>
+        <div>
+            <span>&copy; {{'Common_all_page.footer_text' | translate}}</span>
+        </div>
+    </footer>
+</div>

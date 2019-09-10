@@ -1,0 +1,215 @@
+<div class="doc-type-body" fxLayout="column" id="docTypehtml" style="height: 100% !important;">
+        <img class="emoji-bg-one" src="assets/icons/emoji-bg-one.svg">
+        <img class="emoji-bg-two" src="assets/icons/emoji-bg-two.svg">
+        <img class="emoji-bg-three" src="assets/icons/emoji-bg-three.svg">
+        <img class="emoji-bg-four" src="assets/icons/emoji-bg-four.svg">
+        <div class="header-doc-type" fxLayout="row">
+            <div fxLayout="row" fxLayoutAlign="end" class="grid-image" style="width: 20%;">
+                <img src="assets/images/Repeat Grid 10.svg" (click)="gotomenu()" *ngIf="dashboardButton">
+            </div>
+            <div class="center-heading" fxLayout="row" fxLayoutAlign="center" style="width: 60%;">
+                <div fxLayout="column">
+                    <img src="assets/icons/diro-kyc-white.svg" class="diro-icon">
+                    <span>Verified online documents</span>
+                </div>
+            </div>
+            <div class="profile-part" fxLayout="row" fxLayoutAlign="end" style="width:20%;">
+                <button class="add-extension" *ngIf="false" (click)="addExt()">'docType_page.install_ext'</button>
+                <div fxLayout="column">
+                    <img src="assets/images/user.png" class="user-logo" (click)="showPro()"
+                        *ngIf="profileImage == undefined">
+                    <img src="AllData.profileImage" class="user-logo" (click)="showPro()" *ngIf="profileImage != undefined">
+                    <div class="triangle-part" *ngIf="userProfile"></div>
+                    <div class="profile-card" fxLayout="column" *ngIf="userProfile">
+                        <!-- <div class="upper-card" fxLayout="row">
+                            <img src="assets/images/user.png" class="card-pro" *ngIf="AllData.profileImage == undefined">
+                            <img src="AllData.profileImage" class="card-pro" *ngIf="AllData.profileImage != undefined">
+                            <div fxLayout="column">
+                                <div class="user-name">'AllData.doc.firstname + " " + AllData.doc.lastname'</div>
+                                <span class="user-address">'AllData.doc.address.street + " " + AllData.doc.address.city + "
+                                    " + AllData.doc.address.state + " " + AllData.doc.address.country + " " +
+                                    AllData.doc.address.zipcode'</span>
+                                <div fxLayout="row">
+                                    <div class="user-dob">'userDOB'</div>
+                                    <a fxLayout="column" fxLayout="center" href="/profile"><img
+                                            src="assets/icons/ic-edit.svg" class="view-profile-button"></a>
+                                </div>
+                            </div> -->
+                            <!-- flex column -->
+                        <!-- </div> -->
+                        <!-- upper-card -->
+                        <!-- <div class="pro-row" fxLayout="row">
+                            <img src="assets/icons/ic-start.svg" class="pro-row-icon">
+                            <div class="pro-row-title" fxLayout="row" flex>
+                                Common_all_page.id_proof | translate
+                                <img src="assets/icons/ic-alert.svg" class="failed-alert-icon" *ngIf="idRejectedTick">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="idDoubleTick">
+                                <span style="color: #2cba44;">'Common_all_page.verified_status' | translate</span>
+                                <img src="assets/icons/ic-verified.svg" class="status-icon">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="idSingleTick">
+                                <span>Common_all_page.processing_status' | translate</span>
+                                <img src="assets/icons/ic-processing.svg" class="status-icon">
+                            </div>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center" *ngIf="idRejectedTick"
+                                (click)="goIdLinks()">'Common_all_page.re_submit'</button>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center" *ngIf="idSubmitNow"
+                                (click)="goIdLinks()">'Common_all_page.submit_now'</button>
+                        </div> -->
+                        <!-- pro-row -->
+                        <!-- <div class="pro-row" fxLayout="row">
+                            <img src="assets/icons/ic-address-proof.svg" class="pro-row-icon">
+                            <div class="pro-row-title" fxLayout="row" flex>
+                                Common_all_page.address_proof' | translate
+                                <img src="assets/icons/ic-alert.svg" class="failed-alert-icon" *ngIf="addressRejectedTick">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="addressDoubleTick">
+                                <span style="color: #2cba44;">Common_all_page.verified_status' | translate</span>
+                                <img src="assets/icons/ic-verified.svg" class="status-icon">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="addressSingleTick">
+                                <span>'Common_all_page.processing_status' | translate</span>
+                                <img src="assets/icons/ic-processing.svg" class="status-icon">
+                            </div>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center"
+                                *ngIf="addressRejectedTick" (click)="goAddressLinks()">'Common_all_page.re_submit' |
+                                translate</button>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center"
+                                *ngIf="addressSubmitNow" (click)="goAddressLinks()">'Common_all_page.submit_now' |
+                                translate</button>
+                        </div> -->
+                        <!-- pro-row -->
+                        <!-- <div class="pro-row" fxLayout="row" *ngIf="AllData.BankStatementStatus != 'NA'">
+                            <img src="assets/icons/ic-bank.svg" class="pro-row-icon">
+                            <div class="pro-row-title" fxLayout="row" flex>
+                                'Common_all_page.bank_statement' | translate
+                                <img src="assets/icons/ic-alert.svg" class="failed-alert-icon" *ngIf="bankRejectedTick">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="bankDoubleTick">
+                                <span style="color: #2cba44;">Common_all_page.verified_status' | translate</span>
+                                <img src="assets/icons/ic-verified.svg" class="status-icon">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="bankSingleTick">
+                                <span>Common_all_page.processing_status' | translate</span>
+                                <img src="assets/icons/ic-processing.svg" class="status-icon">
+                            </div>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center"
+                                *ngIf="bankRejectedTick" (click)="goBankLinks()">Common_all_page.re_submit' |
+                                translate</button>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center" *ngIf="bankSubmitNow"
+                                (click)="goBankLinks()">Common_all_page.submit_now' | translate</button>
+                        </div> -->
+                        <!-- pro-row -->
+                        <!-- <div class="bottom-pro-text" fxLayout="row" fxLayoutAlign="center" sign-out>
+                            <img src="assets/icons/ic-logout.svg" class="sign-out-icon">
+                            <span class="sign-out-text">'Common_all_page.sign_out' | translate</span>
+                        </div> -->
+                        <!-- bottom-protext -->
+                    </div>
+                    <!-- profile-card -->
+                </div>
+                <!-- flex column user profile image -->
+            </div>
+            <!-- profile-part -->
+        </div>
+        <!-- header-doc-type -->
+
+        <div fxLayout="row" fxLayoutAlign="center">
+                <div class="cvd-info-card" fxLayout="column">
+                  <div class="card-title">Verify your Identity</div>
+                  <!-- <md-divider></md-divider> -->
+                  <div fxLayout="row" class="columns">
+                    <div fxLayout="column" class="white-column">
+                      <div class="column-title" fxLayout="column" fxLayoutAlign="center">cvd_info_page.submit_all_cvd'</div>
+                      <div class="column-text" fxLayout="column" fxLayoutAlign="center">Id Proof</div>
+                      <div class="column-text" fxLayout="column" fxLayoutAlign="center">Address Proof</div>
+                      <div class="column-text" fxLayout="column" fxLayoutAlign="center">Bank Statement</div>
+                    </div>
+                    <div fxLayout="column" class="grey-column">
+                      <div class="column-title" fxLayout="column" fxLayoutAlign="center">Strong</div>
+                      <div class="column-text" fxLayout="row" fxLayoutAlign="center"><img src="assets/icons/ic-list-strong.svg" class="list-icon"></div>
+                      <div class="column-text" fxLayout="row" fxLayoutAlign="center"><img src="assets/icons/ic-list-strong.svg" class="list-icon"></div>
+                      <div class="column-text" fxLayout="column" fxLayoutAlign="center">--</div>
+                    </div>
+                    <div fxLayout="column" class="blue-column">
+                      <div class="column-title" fxLayout="column" fxLayoutAlign="center">Strong/ Weak</div>
+                      <div class="column-text" fxLayout="row" fxLayoutAlign="center">
+                        <img src="assets/icons/ic-list-strong.svg" class="list-icon">
+                        <span class="or">Or</span>
+                        <img src="assets/icons/ic-list-weak.svg" class="list-icon" style="margin-top: 2px;">
+                      </div>
+                      <div class="column-text" fxLayout="row" fxLayoutAlign="center">
+                        <img src="assets/icons/ic-list-strong.svg" class="list-icon">
+                        <span class="or">or</span>
+                        <img src="assets/icons/ic-list-weak.svg" class="list-icon" style="margin-top: 2px;">
+                      </div>
+                      <div class="column-text" fxLayout="row" fxLayoutAlign="center">
+                        <img src="assets/icons/ic-list-strong.svg" class="list-icon">
+                        <span class="or">Or</span>
+                        <img src="assets/icons/ic-list-weak.svg" class="list-icon" style="margin-top: 2px;">
+                      </div>
+                    </div>
+                  </div>
+                  <div fxLayout="row">
+                    <img src="assets/icons/ic-list-strong.svg" class="strong-icon">
+                    <div fxLayout="column">
+                      <div class="bold-text">
+                        <span class="blue-text">STRONG PROOF</span>
+                        <span>&nbsp;= Web page capture from online portal</span>
+                      </div>
+                      <div fxLayout="row">
+                        <span>Login to these portal</span>
+                        <img src="assets/icons/ic-nxt-arrow.svg" class="next-arrow-icon">
+                        <span>Go To Profile</span>
+                        <img src="assets/icons/ic-nxt-arrow.svg" class="next-arrow-icon">
+                        <span>Capture</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div fxLayout="row">
+                    <img src="assets/icons/ic-list-weak.svg" class="strong-icon">
+                    <div fxLayout="column" flex>
+                      <div class="bold-text" style="margin-top: 22px;">
+                        <span class="yellow-text">WEAK PROOF</span>
+                        <span>&nbsp;= Camera upload</span>
+                      </div>
+                      <div fxLayout="row">
+                        <span>Goto "I dont have online ID"</span>
+                        <img src="assets/icons/ic-nxt-arrow.svg" class="next-arrow-icon">
+                        <span>Camera</span>
+                      </div>
+                    </div>
+                    <div fxLayout="column" style="margin-left:auto;">
+                      <button mat-button class="get-started-button" (click)="loadHome()">Ok Got It</button>
+                    </div>
+                  </div>
+                  <div class="bottom-box" fxLayout="row">
+                    <div style="margin-top: -3px;" flex >Captured directly from online portal</div>
+                    <div class="see-demo" fxLayout="row" (click)="showVideo()" style="margin-left:auto;">
+                      <img src="assets/icons/ic-play.svg" class="play-icon">
+                      <span style="margin-top: -3px;">See Demo</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+        <div fxLayout="row" fxLayoutAlign="center" *ngIf="dashboardButton">
+            <button class="dashboard-button" fxLayout="column" fxLayout="center"
+                (click)="viewDashBoard()">'docType_page.view_dashboard'</button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" style="text-align: center;">
+            <div class="links-bottom-text " fxLayout="column">
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <img src="assets/images/img-appstore.png" class="app-store" (click)="loadAppStore()">
+                    <img src="assets/images/img-playstore.png" class="play-store" (click)="loadPlayStore()">
+                </div>
+                <span>&copy; 2014-2018 Diro Foundation. All Rights Reserved</span>
+            </div>
+        </div>
+        <!-- fxLayoutAlign="center" -->
+    </div>
+    <!-- final div -->

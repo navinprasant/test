@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="30" viewBox="0 0 90 30">
+    <defs>
+        <rect id="a" width="90" height="30" rx="4"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <use fill="#FFF" xlink:href="#a"/>
+        <rect width="89" height="29" x=".5" y=".5" stroke="#FDB828" rx="4"/>
+        <g fill="#FDB828">
+            <text font-family="Helvetica-Bold, Helvetica" font-size="12" font-weight="bold" letter-spacing=".61" transform="translate(19.5 8)">
+                <tspan x="17" y="11">ADD</tspan>
+            </text>
+            <path d="M19.5 16.196v-2.41h3.786V10h2.428v3.786H29.5v2.41h-3.786V20h-2.428v-3.804z"/>
+        </g>
+    </g>
+</svg>

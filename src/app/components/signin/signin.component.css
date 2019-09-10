@@ -1,0 +1,94 @@
+
+.signin-card {
+    width: 390px;
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24), 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.84);
+    margin-top: 80px;
+    margin: auto;
+    padding: 22px 30px 40px 30px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+.sign-in-bold-text {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.login-diro-logo {
+  width: 120px;
+  height: 34px;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+
+.copy-right-text-bottom {
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  background-color: rgb(0, 188, 212);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.55;
+  letter-spacing: normal;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-top: 24px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+}
+
+.signin-card .country-code {
+  width: 85px;
+  height: 48px;
+  font-size: 16px;
+  margin-top: 38px;
+}
+
+.signin-card .next-button {
+  border: 1px;
+  width: auto;
+  padding-left: 26px;
+  padding-right: 26px;
+  height: 36px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.24);
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-top: 30px;
+}
+
+.login-card .terms-privacy-text {
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.38);
+  margin-top: 32px;
+}
+
+.login-card .terms-privacy-text a {
+  color: rgba(0, 0, 0, 0.38) !important;
+  text-decoration: underline;
+}
+
+.login-card a:link {
+  font-size: 14px;
+  font-weight: normal;
+}

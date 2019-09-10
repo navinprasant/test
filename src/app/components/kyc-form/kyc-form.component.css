@@ -1,0 +1,644 @@
+/* body
+{
+	transition: linear 1s;
+} */
+/* .mat-form-field {
+	display: inline-block;
+	position: relative;
+	padding: 2px;
+	margin: 18px 0;
+	vertical-align: middle;
+} */
+
+.verify-card .bold-text {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.camera-click
+{
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-color: #000000;
+	position: absolute;
+	z-index: 0;
+}
+.camera-click .close-webcam
+{
+	width: 18px;
+	height: 18px;
+	object-fit: contain;
+	position: relative;
+	z-index: 1;
+	margin-top: 18px;
+	margin-right: 18px;
+}
+.camera-click .close-webcam:focus
+{
+	outline: none;
+	border: 0px;
+}
+.camera-click .close-webcam:hover
+{
+	cursor: pointer;
+}
+.camera-click .webcam-box
+{
+	position: relative;
+	z-index: 1;
+	margin-top: 10%;
+}
+.camera-click .cancel-webcam-button
+{
+	color: rgba(255, 255, 255, 0.7) !important;
+	margin-right: 64px;
+}
+.camera-click .click-pic-button
+{
+	width: 48px;
+	height: 48px;
+	object-fit: contain;
+	margin-top: 32px;
+}
+.camera-click .click-pic-button:focus,.camera-click .cancel-webcam-button:focus
+{
+	outline: none;
+	border: 0px;
+	color: rgba(255, 255, 255, 0.7) !important;
+}
+.camera-click .click-pic-button:hover,.camera-click .cancel-webcam-button:hover
+{
+	cursor: pointer;
+}
+.camera-click .upload-btn {
+	width: auto;
+	height: auto;
+	padding: 9px 18px;
+	background-color: transparent;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
+	margin-top: 32px;
+	border-radius: 12px;
+}
+.camera-click .upload-btn img {
+	width: 20px;
+	height: 20px;
+	transform: translateY(-2px);
+}
+.camera-click .upload-btn:hover {
+	opacity: 0.8;
+}
+.camera-click video, .camera-click img#clickedImage {
+	transition: 1s ease-in-out;
+}
+
+
+
+.copy-right-text-bottom {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+    background-color: rgb(0, 188, 212);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.55;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 24px;
+    position: fixed;
+    z-index: 1;
+	bottom: 0px;
+}
+.verify-card
+{
+	width: 390px;
+	border-radius: 2px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24), 0 0 8px 0 rgba(0, 0, 0, 0.12);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.43;
+	letter-spacing: normal;
+	text-align: left;
+	color: rgba(0, 0, 0, 0.84);
+	padding-left: 30px;
+	padding-top: 22px;
+	padding-right: 30px; 
+	padding-bottom: 40px;
+	position: relative;
+	z-index: 1;
+	margin: auto;
+}
+
+.center-heading
+{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.header .center-heading .subheading
+{
+	font-size: 14px;
+	font-weight: 500;
+}
+.header .user-name
+{
+	width: 100px;
+	height: 50px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 12px;
+	float: right;
+}
+.user-logo
+{
+	width: 35.9px;
+	height: 35.9px;
+	border-radius: 50%;
+	margin-top: 3px;
+	float: right;
+	position: relative;
+	margin-right: 20.1px;
+}
+.user-logo:focus
+{
+	outline: none;
+	border: 0px;
+}
+
+/*  login page Css */
+
+/* login and verify page */
+.login-div
+{
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgb(0, 188, 212);
+	position: absolute;
+	z-index: 0;
+	overflow-y: auto;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+}
+.login-card
+{
+	width: 390px;
+	border-radius: 2px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24), 0 0 8px 0 rgba(0, 0, 0, 0.12);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.43;
+	letter-spacing: normal;
+	text-align: left;
+	color: rgba(0, 0, 0, 0.84);
+	margin-top: 80px;
+	margin: auto;
+	padding: 22px 30px 40px 30px;
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+}
+
+.login-diro-logo
+{ 
+	width: 120px;
+	height: 34px;
+	object-fit: contain;
+	margin-bottom: 24px;
+}
+.login-card .bold-text
+{ 
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+.login-card .terms-privacy-text
+{
+	font-size: 13px;
+	font-weight: 300;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.38);
+	margin-top: 32px;
+}
+.verify-card .terms-privacy-text
+{
+	font-size: 13px;
+	font-weight: 300;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.38);
+	margin-top: 32px;
+}
+.login-card .terms-privacy-text a:link
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.verify-card .terms-privacy-text a:link
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.login-card .terms-privacy-text a:hover
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.verify-card  .terms-privacy-text a:hover
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.login-card .terms-privacy-text a:active
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.verify-card .terms-privacy-text a:active
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.login-card .terms-privacy-text a:visited
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.verify-card .terms-privacy-text a:visited
+{
+	color: rgba(0, 0, 0, 0.38);
+	text-decoration: underline;	
+}
+.social-icon:focus
+{
+	outline: none;
+	border: 0px;
+}
+.social-icon:hover
+{
+	cursor: pointer;
+}
+.login-card .country-code
+{
+	width: 85px;
+	height: 48px;
+	font-size: 16px;
+	margin-top: 38px;
+}
+.select-search
+{
+	width:100%; 
+	height: auto; 
+	position: fixed; 
+	top: -20px; 
+	left: 0px;
+	z-index: 999;
+	background-color: #ffffff; 
+	padding: 20px 20px 10px 28px; 
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.24);
+}
+.input-number
+{
+	height: 48px;
+	font-size: 16px;
+	float: right;
+	margin-left: 33px;
+	margin-top: 38px;
+}
+.input-number-new
+{
+	width: 98% !important;
+	height: 48px !important;
+	font-size: 16px !important;
+	float: right !important;
+	margin-top: 33px !important;
+}
+.login-card .next-button
+{ 
+	border: 1px; 
+	width: auto; 
+	padding-left: 26px;
+	padding-right: 26px;
+	height: 36px;
+	border-radius: 2px;
+	background-color: rgba(0, 0, 0, 0.24);
+	text-align: center;
+	color: rgb(255, 255, 255);
+	margin-top: 30px;
+}
+.login-card .next-button:focus
+{ 
+	outline: none;
+	border: 0px; 
+}
+.login-card .ic-phone
+{
+	width: 48px;
+	height: 48px;
+	margin-bottom: 16px;
+}
+.login-card .add-photo-icon
+{
+	width: 72px;
+  	height: 72px;
+ 	margin-top: 16px;
+ 	border-radius: 50%; 
+}
+.login-card .add-photo-icon:focus
+{
+	outline: none;
+	border: 0px;
+}
+.login-card .add-photo-text
+{
+	font-size: 12px;
+	font-weight: 500;
+	color: #00bcd4;
+	margin-top: 6px;
+	text-align: center;
+}
+.login-card .add-photo-text:focus
+{
+	outline: none;
+	border: 0px;
+}
+.verify-card .next-button
+{ 
+	border: 1px; 
+	width: auto; 
+	padding-left: 26px;
+	padding-right: 26px;
+	height: 36px;
+	border-radius: 2px;
+	background-color: rgba(0, 0, 0, 0.24);
+	text-align: center;
+	color: rgb(255, 255, 255);
+	margin-top: 30px;
+}
+.verify-card .next-button:focus
+{ 
+	outline: none;
+	border: 0px; 
+}
+.verify-card .ic-phone
+{
+	width: 48px;
+	height: 48px;
+	margin-bottom: 16px;
+}
+.verify-card .add-photo-icon
+{
+	width: 72px;
+  	height: 72px;
+ 	margin-top: 16px;
+ 	border-radius: 50%; 
+}
+.verify-card .add-photo-icon:focus
+{
+	outline: none;
+	border: 0px;
+}
+.verify-card .add-photo-text
+{
+	font-size: 12px;
+	font-weight: 500;
+	color: #00bcd4;
+	margin-top: 6px;
+	text-align: center;
+}
+.verify-card .add-photo-text:focus
+{
+	outline: none;
+	border: 0px;
+}
+.copyright-text
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.55;
+	letter-spacing: normal;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	margin-top: 24px;
+}
+.bottom-text .app-store
+{
+	width: 107.2px;
+	height: 31px;
+	object-fit: contain;
+	margin-bottom: 16px;
+	margin-right: 15px;
+}
+.bottom-text .app-store:focus
+{
+	outline: none;
+	border: 0px;
+}
+.bottom-text .app-store:hover
+{
+	cursor: pointer;
+}
+.bottom-text .play-store
+{
+	width: 98.8px;
+	height: 31px;
+	object-fit: contain;
+	margin-bottom: 16px;
+}
+.bottom-text .play-store:focus
+{
+	outline: none;
+	border: 0px;
+}
+.bottom-text .play-store:hover
+{
+	cursor: pointer;
+}
+.links-bottom-text
+{
+	width: 100%; 
+	height: auto;
+	padding-bottom: 10px; 
+	background-color: rgb(0, 188, 212);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 11px;
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.55;
+	letter-spacing: normal;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	margin-top: 36px;
+	position: relative;
+}
+.links-bottom-text .app-store
+{
+	width: 107.2px;
+	height: 31px;
+	object-fit: contain;
+	margin-bottom: 16px;
+	margin-right: 15px;
+}
+.links-bottom-text .app-store:focus
+{
+	outline: none;
+	border: 0px;
+}
+.links-bottom-text .app-store:hover
+{
+	cursor: pointer;
+}
+.links-bottom-text .play-store
+{
+	width: 98.8px;
+	height: 31px;
+	object-fit: contain;
+	margin-bottom: 16px;
+}
+.links-bottom-text .play-store:focus
+{
+	outline: none;
+	border: 0px;
+}
+.links-bottom-text .play-store:hover
+{
+	cursor: pointer;
+}
+.links-bottom-text > img
+{
+	width: 141.3px;
+  	height: 24.2px;
+  	position: fixed;
+  	right: 90.7px;
+  	bottom: 30.8px;
+}
+.login-card .logo-org
+{
+	width: 50px;
+	height: 50px;
+	object-fit: contain;	
+	margin-right: 18px;
+}
+.login-card .less-bold-otp
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: rgba(0, 0, 0, 0.54);
+}
+.login-card a:link
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #00bcd4;
+}
+.login-card a:visited
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #00bcd4;
+}
+.login-card a:hover
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #00bcd4;
+}
+.login-card a:active
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #00bcd4;
+}
+.login-div .bottom-card-text
+{
+	font-size: 12px;
+  	font-weight: normal;
+  	color: #ffffff;
+  	margin-top: 28px;
+}
+.login-div .bottom-card-logo
+{
+	width: 34px;
+	height: 20px;
+	margin-top: 24px;
+	margin-left: 5px;
+}
+.login-card .input-otp{width: 200px;height: 25px;font-size: 24px;font-weight: 500;text-align: center;margin-top: 35px;}
+.login-card .input-otp .invalid-otp{font-size: 12px;color: #f44336;}
+.verify-card .input-otp .invalid-otp{font-size: 12px;color: #f44336; text-align: center}
+.login-card .timer
+{
+	font-size: 14px;
+  	font-weight: 300;
+  	width: 265px;
+  	color: #00bcd4;
+  	margin-top: 15px;
+}
+.login-card .resend-button
+{
+	width: auto;
+	height: 36px;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.38);
+	background-color: rgb(255, 255, 255);
+	font-size: 14px;
+	border-style: none;
+	margin-top: 45px;
+}
+.verify-card .resend-button
+{
+	width: auto;
+	height: 36px;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.38);
+	background-color: rgb(255, 255, 255);
+	font-size: 14px;
+	border-style: none;
+	margin-top: 45px;
+}
+/* .login-card .resend-button:hover{ cursor: pointer;color: #00bcd4;}
+.login-card .resend-button:focus{ outline: none;border: 0px;}
+.login-card .verify-button{ width: 93px;height: 36px;border-radius: 2px;background-color: rgba(0,0,0,0.24);text-align: center;color: rgb(255, 255, 255); border:1px solid #fff;}
+.login-card .verify-button:focus{ outline: none;border: 0px;}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none;-moz-appearance: none;appearance: none;margin: 0; }
+.overflow-none{ overflow: none !important; }
+.md-datepicker-input-container{ width: 80%; }
+._md-datepicker-floating-label>md-datepicker .md-datepicker-button{ float: right; }
+._md-datepicker-floating-label._md-datepicker-has-calendar-icon>label:not(.md-no-float):not(.md-container-ignore){ width: 95%; }
+.md-icon-button+.md-datepicker-input-container{ margin-left:0px; } */
+/* social login page css */
+.left{ margin-right: 15px; }
+.right{ margin-left: 15px; }
+.right img, .left img{ width: 100% !important; height: 48px !important; cursor: pointer;  }
+.or-wrap{ font-size: 12px;text-align: center;color: rgba(0, 0, 0, 0.38); }
+.or-wrap .or{ width: 100%; margin-top: 35px; margin-bottom: 20px; }
+/* emojis on both sides */
+
+
+

@@ -1,0 +1,446 @@
+<div class="doc-type-body" fxLayout="column" id="docTypehtml" style="height: 100% !important;">
+        <img class="emoji-bg-one" src="assets/icons/emoji-bg-one.svg">
+        <img class="emoji-bg-two" src="assets/icons/emoji-bg-two.svg">
+        <img class="emoji-bg-three" src="assets/icons/emoji-bg-three.svg">
+        <img class="emoji-bg-four" src="assets/icons/emoji-bg-four.svg">
+        <div class="header-doc-type" fxLayout="row">
+            <div fxLayout="row" fxLayoutAlign="end" class="grid-image" style="width: 20%;">
+                <img src="assets/images/Repeat Grid 10.svg" (click)="gotomenu()" *ngIf="dashboardButton">
+            </div>
+            <div class="center-heading" fxLayout="row" fxLayoutAlign="center" style="width: 60%;">
+                <div fxLayout="column">
+                    <img src="assets/icons/diro-kyc-white.svg" class="diro-icon">
+                    <span>Verified online documents</span>
+                </div>
+            </div>
+            <div class="profile-part" fxLayout="row" fxLayoutAlign="end" style="width:20%;">
+                <button class="add-extension" *ngIf="false" (click)="addExt()">'docType_page.install_ext'</button>
+                <div fxLayout="column">
+                    <img src="assets/images/user.png" class="user-logo" (click)="showPro()"
+                        *ngIf="profileImage == undefined">
+                    <img src="AllData.profileImage" class="user-logo" (click)="showPro()" *ngIf="profileImage != undefined">
+                    <div class="triangle-part" *ngIf="userProfile"></div>
+                    <div class="profile-card" fxLayout="column" *ngIf="userProfile">
+                        <div class="upper-card" fxLayout="row">
+                            <img src="assets/images/user.png" class="card-pro" *ngIf="AllData.profileImage == undefined">
+                            <img src="AllData.profileImage" class="card-pro" *ngIf="AllData.profileImage != undefined">
+                            <div fxLayout="column">
+                                <div class="user-name">'AllData.doc.firstname + " " + AllData.doc.lastname'</div>
+                                <span class="user-address">'AllData.doc.address.street + " " + AllData.doc.address.city + "
+                                    " + AllData.doc.address.state + " " + AllData.doc.address.country + " " +
+                                    AllData.doc.address.zipcode'</span>
+                                <div fxLayout="row">
+                                    <div class="user-dob">'userDOB'</div>
+                                    <a fxLayout="column" fxLayout="center" href="/profile"><img
+                                            src="assets/icons/ic-edit.svg" class="view-profile-button"></a>
+                                </div>
+                            </div>
+                            <!-- flex column -->
+                        </div>
+                        <!-- upper-card -->
+                        <div class="pro-row" fxLayout="row">
+                            <img src="assets/icons/ic-start.svg" class="pro-row-icon">
+                            <div class="pro-row-title" fxLayout="row" flex>
+                                Common_all_page.id_proof | translate
+                                <img src="assets/icons/ic-alert.svg" class="failed-alert-icon" *ngIf="idRejectedTick">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="idDoubleTick">
+                                <span style="color: #2cba44;">'Common_all_page.verified_status' | translate</span>
+                                <img src="assets/icons/ic-verified.svg" class="status-icon">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="idSingleTick">
+                                <span>Common_all_page.processing_status' | translate</span>
+                                <img src="assets/icons/ic-processing.svg" class="status-icon">
+                            </div>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center" *ngIf="idRejectedTick"
+                                (click)="goIdLinks()">'Common_all_page.re_submit'</button>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center" *ngIf="idSubmitNow"
+                                (click)="goIdLinks()">'Common_all_page.submit_now'</button>
+                        </div>
+                        <!-- pro-row -->
+                        <div class="pro-row" fxLayout="row">
+                            <img src="assets/icons/ic-address-proof.svg" class="pro-row-icon">
+                            <div class="pro-row-title" fxLayout="row" flex>
+                                Common_all_page.address_proof' | translate
+                                <img src="assets/icons/ic-alert.svg" class="failed-alert-icon" *ngIf="addressRejectedTick">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="addressDoubleTick">
+                                <span style="color: #2cba44;">Common_all_page.verified_status' | translate</span>
+                                <img src="assets/icons/ic-verified.svg" class="status-icon">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="addressSingleTick">
+                                <span>'Common_all_page.processing_status' | translate</span>
+                                <img src="assets/icons/ic-processing.svg" class="status-icon">
+                            </div>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center"
+                                *ngIf="addressRejectedTick" (click)="goAddressLinks()">'Common_all_page.re_submit' |
+                                translate</button>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center"
+                                *ngIf="addressSubmitNow" (click)="goAddressLinks()">'Common_all_page.submit_now' |
+                                translate</button>
+                        </div>
+                        <!-- pro-row -->
+                        <div class="pro-row" fxLayout="row" *ngIf="AllData.BankStatementStatus != 'NA'">
+                            <img src="assets/icons/ic-bank.svg" class="pro-row-icon">
+                            <div class="pro-row-title" fxLayout="row" flex>
+                                'Common_all_page.bank_statement' | translate
+                                <img src="assets/icons/ic-alert.svg" class="failed-alert-icon" *ngIf="bankRejectedTick">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="bankDoubleTick">
+                                <span style="color: #2cba44;">Common_all_page.verified_status' | translate</span>
+                                <img src="assets/icons/ic-verified.svg" class="status-icon">
+                            </div>
+                            <div class="doc-status" fxLayout="row" *ngIf="bankSingleTick">
+                                <span>Common_all_page.processing_status' | translate</span>
+                                <img src="assets/icons/ic-processing.svg" class="status-icon">
+                            </div>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center"
+                                *ngIf="bankRejectedTick" (click)="goBankLinks()">Common_all_page.re_submit' |
+                                translate</button>
+                            <button class="re-submit-button" fxLayout="column" fxLayoutAlign="center" *ngIf="bankSubmitNow"
+                                (click)="goBankLinks()">Common_all_page.submit_now' | translate</button>
+                        </div>
+                        <!-- pro-row -->
+                        <div class="bottom-pro-text" fxLayout="row" fxLayoutAlign="center" sign-out>
+                            <img src="assets/icons/ic-logout.svg" class="sign-out-icon">
+                            <span class="sign-out-text">'Common_all_page.sign_out' | translate</span>
+                        </div>
+                        <!-- bottom-protext -->
+                    </div>
+                    <!-- profile-card -->
+                </div>
+                <!-- flex column user profile image -->
+            </div>
+            <!-- profile-part -->
+        </div>
+        <!-- header-doc-type -->
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div class="downlod-wrap" *ngIf="downloadExt">
+                <div class="left-wrap">
+                    <div class="img-wrap">
+                        <img src="assets/images/ic-firefox.png">
+                    </div>
+                </div>
+                <div class="right-wrap" fxLayout="column">
+                    <div class="text">docType_page.download_ext_text' | translate</div>
+                    <div fxLayout="row" fxLayoutAlign="end">
+                        <button mat-button class="download-btn" (click)="addExt()"> docType_page.install_ext |
+                            translate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="confirm-heading-wrap" fxLayout="row" fxLayoutAlign="center">
+            <div class="header-text">
+                <div class="lines"></div>
+                <div class="text"> Welcome prashant kumar! </div>
+                <div class="lines"></div>
+            </div>
+        </div>
+        <div style="color: #ffffff;" fxLayout="row" fxLayoutAlign="center">Please verify your self using online documents
+        </div>
+    
+    
+        <div class="mobiles-screens" *ngIf="test">
+            <div ng-class="mainWrapPart" fxLayout="column" fxLayoutAlign="center" *ngIf="mainWrap">
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <div class="content-wrap" style="margin-right: 20px;" (click)="goIdLinks()" [ngStyle]="idWrapOpacity"
+                        fxLayout="column">
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="idSingleTick"><img class="tick-icon"
+                                src="assets/icons/single-tick.svg"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="idDoubleTick"><img class="tick-icon"
+                                src="assets/icons/double-tick.svg"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="idWhiteTick"><img
+                                src="assets/icons/single_white_tick.svg" class="tick-icon"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="idRejectedTick"><img
+                                src="assets/icons/ic-rejected-doc.svg" class="tick-icon"></div>
+                        <div fxLayout="row" fxLayoutAlign="center">
+                            <img src="assets/icons/id-proof.svg">
+                        </div>
+                        <div class="content-wrap-text">
+                            IdProof
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center">
+                            <button mat-button class="md-raised md-warn download-btn" fxLayout="column"
+                                fxLayoutAlign="center" *ngIf="idSubmitNow" (click)="goIdLinks()">Common_all_page.submit_now'
+                                | translate </button>
+                            <button mat-button class="md-raised md-warn download-btn" fxLayout="column"
+                                fxLayoutAlign="center" *ngIf="idResubmitNow"
+                                (click)="goIdLinks()">Common_all_page.re_submit' | translate </button>
+                            <img src="assets/icons/ic-processing.svg" class="img-procc" *ngIf="idProcessing">
+                            <div class="proccessing" *ngIf="idProcessing">Common_all_page.processing_status' |translate
+                            </div>
+                        </div>
+                        <div fxLayout="column" *ngIf="idVerified">
+                            <div class="dl">idVerifiedFilename</div>
+                            <div class="verified" *ngIf="idVerifiedText">Common_all_page.verified_status' | translate </div>
+                            <div class="verified" style="color: #fdb828;" *ngIf="idWeakText"> status_info_page.weak'
+                                |translate
+                            </div>
+                            <div class="up-time">idVerifiedTime</div>
+                        </div>
+                    </div>
+                    <div class="content-wrap" [ngStyle]="addressWrapOpacity" (click)="goAddressLinks()">
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="addressSingleTick"><img class="tick-icon"
+                                src="assets/icons/single-tick.svg"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="addressDoubleTick"><img class="tick-icon"
+                                src="assets/icons/double-tick.svg"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="addressWhiteTick"><img
+                                src="assets/icons/single_white_tick.svg" class="tick-icon"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="addressRejectedTick"><img
+                                src="assets/icons/ic-rejected-doc.svg" class="tick-icon"></div>
+                        <img src="assets/icons/address-proof.svg">
+                        <div class="content-wrap-text"> Common_all_page.address_proof' | translate</div>
+                        <div fxLayout="row" fxLayoutAlign="center">
+                            <button mat-button class="md-raised md-warn download-btn" fxLayout="column"
+                                fxLayoutAlign="center" *ngIf="addressSubmitNow" (click)="goAddressLinks()">
+                                'Common_all_page.submit_now' | translate </button>
+                            <button mat-button class="md-raised md-warn download-btn" fxLayout="column"
+                                fxLayoutAlign="center" *ngIf="addressResubmitNow"
+                                (click)="goAddressLinks()">'Common_all_page.re_submit' | translate
+                            </button>
+                            <img src="assets/icons/ic-processing.svg" class="img-procc" *ngIf="addressProcessing">
+                            <div class="proccessing" *ngIf="addressProcessing"> Common_all_page.processing_status' |
+                                translate</div>
+                        </div>
+                        <div fxLayout="column" *ngIf="addressVerified">
+                            <div class="dl">addressVerifiedFilename</div>
+                            <div class="verified" *ngIf="addressVerifiedText"> Common_all_page.verified_status' | translate
+                            </div>
+                            <div class="verified" style="color: #fdb828;" *ngIf="addressWeakText">
+                                Common_all_page.verified_status' | translate </div>
+                            <div class="up-time">'Common_all_page.uploaded_on' | translate addressVerifiedTime}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="row">
+                    <div class="content-wrap bankstatement" style="margin-left: 20px;" [ngStyle]="bankWrapOpacity"
+                        *ngIf="docstatus.bankstatement.status != 'NA'" (click)="goBankLinks()">
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankSingleTick"><img class="tick-icon"
+                                src="assets/icons/single-tick.svg"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankDoubleTick"><img class="tick-icon"
+                                src="assets/icons/double-tick.svg"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankWhiteTick"><img
+                                src="assets/icons/single_white_tick.svg" class="tick-icon"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankRejectedTick"><img
+                                src="assets/icons/ic-rejected-doc.svg" class="tick-icon"></div>
+                        <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankWeakText"><span class="tick-icon"
+                                style="height: 15px;margin-top: 11px;margin-right: 11px;">status_info_page.weak' |
+                                translate</span></div>
+                        <img src="assets/icons/bank-statement.svg">
+                        <div class="content-wrap-text"> Common_all_page.bank_statement' | translate </div>
+                        <div fxLayout="row" fxLayoutAlign="center">
+                            <button mat-button class="md-raised md-warn download-btn" fxLayout="column"
+                                fxLayoutAlign="center" *ngIf="bankSubmitNow"
+                                (click)="goBankLinks()">Common_all_page.submit_now' | translate </button>
+                            <button mat-button class="md-raised md-warn download-btn" fxLayout="column"
+                                fxLayoutAlign="center" *ngIf="bankResubmitNow" (click)="goBankLinks()">
+                                Common_all_page.re_submit' | translate </button>
+                            <img src="assets/icons/ic-processing.svg" class="img-procc" *ngIf="bankProcessing">
+                            <div class="proccessing" *ngIf="bankProcessing">Common_all_page.processing_status' | translate
+                            </div>
+                        </div>
+                        <div fxLayout="column" *ngIf="bankVerified">
+                            <div class="verified">Common_all_page.verified_status' | translate </div>
+                            <div class="dl">bankVerifiedFilename</div>
+                            <div class="up-time">'Common_all_page.uploaded_on' | translate bankVerifiedTime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile screens -->
+    
+        <div class="desktops-screen" style="background-color:red">
+            <!-- <div show-gt-xs show-md show-gt-md class="desktops-screen"> -->
+            <div class="mainWrapPart" fxLayout="row" fxLayoutAlign="center" class="main-wrap-id">
+                <div class="content-wrap" style="margin-right: 20px; opacity: 1; pointer-events: none;" (click)="goIdLinks()" [ngStyle]="idWrapOpacity" fxLayout="column">
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="idSingleTick"><img class="tick- icon"
+                            src="assets/icons/single-tick.svg">test1********</div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="idDoubleTick"><img class="tick- icon"
+                            src="assets/icons/double-tick.svg">test2************</div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="idWhiteTick"><img
+                            src="assets/icons/single_white_tick.svg" class="tick- icon">test3*****************</div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="idRejectedTick"><img
+                            src="assets/icons/ic-rejected-doc.svg" class="tick- icon">test4***********</div>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <img src="assets/icons/id-proof.svg">
+                    </div>
+                    <div class="content-wrap-text">
+                        ID Proof
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <button mat-button class="md-raised md-warn download-btn" fxLayout="column" fxLayoutAlign="center"
+                            *ngIf="true" (click)="goIdLinks()"> submit_now </button>
+                        <button mat-button class="md-raised md-warn download-btn" fxLayout="column" fxLayouAlign="center"
+                            *ngIf="idResubmitNow" (click)="goIdLinks()">re_submit </button>
+                        <img src="assets/icons/ic-processing.svg" class="img-procc" *ngIf="idProcessing">
+                        <div class="proccessing" *ngIf="idProcessing">Common_all_page.processing_status' | translate </div>
+                    </div>
+                    <div fxLayout="column" *ngIf="idVerified">
+                        <div class="dl">idVerifiedFilename</div>
+                        <div class="verified" *ngIf="idVerifiedText"> Common_all_page.verified_status' | translate </div>
+                        <div class="verified" style="color: #fdb828;" *ngIf="idWeakText"> status_info_page.weak' | translate
+                        </div>
+                        <div class="up-time">idVerifiedTime</div>
+                    </div>
+                </div>
+                <!-- content-wrap -->
+                <div class="content-wrap" [ngStyle]="addressWrapOpacity" (click)="goAddressLinks()">
+                    <div fxLayout="row" fxLayoutlign="end" *ngIf="addressSingleTick"><img class="tick-icon"
+                            src="assets/icons/single-tick.svg"></div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="addressDoubleTick"><img class="tick-icon"
+                            src="assets/icons/double-tick.svg"></div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="addressWhiteTick"><img
+                            src="assets/icons/single_white_tick.svg" class="tick-icon"></div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="addressRejectedTick"><img
+                            src="assets/icons/ic-rejected-doc.svg" class="tick-icon"></div>
+                    <img src="assets/icons/address-proof.svg">
+                    <div class="content-wrap-text"> Address Proof</div>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <button mat-button class="md-raised md-warn download-btn" fxLayout="column" fxLayoutAlign="center"
+                            *ngIf="addressSubmitNow" (click)="goAddressLinks()"> Common_all_page.submit_now' | translate
+                        </button>
+                        <button mat-button class="md-raised md-warn download-btn" fxLayout="column" fxLayoutAlign="center"
+                            *ngIf="addressResubmitNow" (click)="goAddressLinks()"> Common_all_page.re_submit' | translate
+                        </button>
+                        <img src="assets/icons/ic-processing.svg" class="img-procc" *ngIf="addressProcessing">
+                        <div class="proccessing" *ngIf="addressProcessing"> Common_all_page.processing_status' | translate
+                        </div>
+                    </div>
+                    <div fxLayout="column" *ngIf="addressVerified">
+                        <div class="dl">addressVerifiedFilename</div>
+                        <div class="verified" *ngIf="addressVerifiedText"> Common_all_page.verified_status' | translate
+                        </div>
+                        <div class="verified" style="color: #fdb828;" *ngIf="addressWeakText">
+                            Common_all_page.verified_status' | translate </div>
+                        <div class="up-time">Common_all_page.uploaded_on' | translate addressVerifiedTime</div>
+                    </div>
+                </div>
+                <!-- content-wrap -->
+                <div class="content-wrap" style="margin-left: 20px;" [ngStyle]="bankWrapOpacity" *ngIf="'NA' != 'NA'"
+                    (click)="goBankLinks()">
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankSingleTick"><img class="tick-icon"
+                            src="assets/icons/single-tick.svg"></div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankDoubleTick"><img class="tick-icon"
+                            src="assets/icons/double-tick.svg"></div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankWhiteTick"><img
+                            src="assets/icons/single_white_tick.svg" class="tick-icon"></div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankRejectedTick"><img
+                            src="assets/icons/ic-rejected-doc.svg" class="tick-icon"></div>
+                    <div fxLayout="row" fxLayoutAlign="end" *ngIf="bankWeakText"><span class="tick-icon"
+                            style="height: 15px;margin-top: 11px;margin-right: 11px;">'status_info_page.weak' |
+                            translate</span></div>
+                    <img src="assets/icons/bank-statement.svg">
+                    <div class="content-wrap-text"> Common_all_page.bank_statement' | translate </div>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <button mat-button class="md-raised md-warn download-btn" fxLayout="column" fxLayoutAlign="center"
+                            *ngIf="bankSubmitNow" (click)="goBankLinks()">Common_all_page.submit_now | translate </button>
+                        <button mat-button class="md-raised md-warn download-btn" fxLayout="column" fxLayoutAlign="center"
+                            *ngIf="bankResubmitNow" (click)="goBankLinks()"> Common_all_page.re_submit | translate </button>
+                        <img src="assets/icons/ic-processing.svg" class="img-procc" *ngIf="bankProcessing">
+                        <div class="proccessing" *ngIf="bankProcessing"> 'Common_all_page.processing_status' | translate
+                        </div>
+                    </div>
+                    <div fxLayout="column" *ngIf="bankVerified">
+                        <div class="verified">'Common_all_page.verified_status' | translate </div>
+                        <div class="dl">bankVerifiedFilename</div>
+                        <div class="up-time">'Common_all_page.uploaded_on' | translate bankVerifiedTime</div>
+                    </div>
+                </div>
+                <!-- content-wrap -->
+            </div>
+            <!-- show-main-wrap-part -->
+        </div>
+        <!-- desktop screen -->
+        <div fxLayout="row" fxLayoutAlign="center" *ngIf="VideoButton">
+            <img src="icons/ic-video.svg" class="video-icon" ng-click="showVideo()">
+            <span class="video-text" (click)="showVideo()">'docType_page.video_text' | translate</span>
+        </div>
+        <!-- <div class="confirm-heading-wrap" fxLayout="row" fxLayoutAlign="center"
+            *ngIf="orgsList.pendingrequest.length > 0 || ( orgsList.allorgdetail != undefined && orgsList.allorgdetail != null && orgsList.allorgdetail != '')">
+            <div class="header-text">
+                <div class="lines"></div>
+                <div class="text"> docType_page.secondHeaderText' | translate </div>
+                <div class="lines"></div>
+            </div>
+        </div> -->
+        <!-- <div class="consent-request-rectangle desktop-consent-request-box" fxLayout="column"
+            *ngFor="let x of orgsList.pendingrequest">
+            <div> <span class="requester-name">x.orgname</span> consent_management_page.sent_request' | translate </div>
+            <div fxLayout="row">
+                <img src="assets/icons/default-org-logo.svg" class="bank-image"
+                    ng-if="x.url == undefined || x.url == null || x.url == ''">
+                <img src="x.url" class="bank-image" *ngIf="x.url != undefined && x.url != null && x.url != ''">
+                <div fxLayout="column" flex>
+                    <div class="request-title">x.orgname</div>
+                    <div>time</div>
+                </div>
+                <button mat-button class="md-raised accept-req-button"
+                    (click)="acceptOrgReq(x,$index)">consent_management_page.accept_button' | translate</button>
+                <button mat-button class="md-raised reject-req-button"
+                    (click)="rejectOrgReq(x,$index)">consent_management_page.reject_button' | translate</button>
+            </div>
+        </div> -->
+    
+        <div class="consent-request-rectangle mobile-consent-request-box" fxLayout="column" fxLayoutAlign="center"
+            *ngFor="let x of orgsList.pendingrequest">
+            <div> <span class="requester-name">x.orgname</span> consent_management_page.sent_request' | translate </div>
+            <div fxLayout="row">
+                <img src="assets/icons/default-org-logo.svg" class="bank-image"
+                    *ngIf="x.url == undefined || x.url == null || x.url == ''">
+                <img src="x.url" class="bank-image" *ngIf="x.url != undefined && x.url != null && x.url != ''">
+                <div layout="column" flex>
+                    <div class="request-title">{{x.orgname}}</div>
+                    <div class="request-time" ng-init="time = getRequestTime(x.crtime)">{{time}}</div>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end">
+                <button mat-button class="md-raised accept-req-button"
+                    (click)="acceptOrgReq(x,$index)">consent_management_page.accept_button' | translate</button>
+                <button mat-button class="md-raised reject-req-button"
+                    (click)="rejectOrgReq(x,$index)">consent_management_page.reject_button' | translate</button>
+            </div>
+        </div>
+        <!-- mobile-consent-request-box -->
+    
+        <div class="consent-orgs-rect" fxLayout="column"
+            *ngIf="orgsList.allorgdetail != undefined && orgsList.allorgdetail != null && orgsList.allorgdetail != ''">
+            <div class="rect-text" fxLayout="row"
+                *ngIf="orgsList.allorgdetail != undefined && orgsList.allorgdetail != null && orgsList.allorgdetail != ''">
+                <div flex>consent_management_page.manage_org' | translate</div>
+                <div class="light-text">consent_management_page.keep_uptodate | translate</div>
+            </div>
+            <div class="org-row" fxLayout="row" *ngFor="let x of orgsList.allorgdetail">
+                <img src="assets/icons/default-org-logo.svg" class="row-pic"
+                    *ngIf="x.url == undefined || x.url == null || x.url == ''">
+                <img src="x.url" class="row-pic" *ngIf="x.url != undefined && x.url != null && x.url != ''">
+                <div fxLayout="column" flex>
+                    <div class="org-name">x.orgname</div>
+                    <div ng-init="time = getRequestTime(x.eptime)">{{time}}</div>
+                </div>
+                <a href="{{x.boardurl}}" ng-if="x.status == true && x.boardurl">
+                    <button mat-button class="md-raised go-to-board-btn">'consent_management_page.go_to_board' | translate
+                    </button>
+                </a>
+            </div>
+        </div>
+        <!-- consent-orgs-rect -->
+        <div fxLayout="row" fxLayoutAlign="center" *ngIf="dashboardButton">
+            <button class="dashboard-button" fxLayout="column" fxLayout="center"
+                (click)="viewDashBoard()">'docType_page.view_dashboard'</button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" >
+            <div class="links-bottom-text " fxLayout="column">
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <div>
+                    <img src="assets/images/img-appstore.png" class="app-store" (click)="loadAppStore()" style="text-align: center !important;">
+                    <img src="assets/images/img-playstore.png" class="play-store" (click)="loadPlayStore()">
+                    </div>
+                </div>
+                <span>&copy;'Common_all_page.footer_text'</span>
+            </div>
+        </div>
+        <!-- fxLayoutAlign="center" -->
+    </div>
+    <!-- final div -->

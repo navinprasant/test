@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="0 0 74 74">
+    <g fill="none" fill-rule="evenodd">
+        <text fill="#989898" font-family="Roboto-Medium, Roboto" font-size="12" font-weight="400" transform="translate(1 1)">
+            <tspan x="17.256" y="61">Sign In</tspan>
+        </text>
+        <path stroke="#C2C2C2" stroke-dasharray="2,3" stroke-linecap="square" d="M3 1h68a2 2 0 0 1 2 2v68a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" opacity=".5"/>
+        <g stroke="#60CB72" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" transform="translate(25 14)">
+            <ellipse cx="12" cy="7.724" rx="8.16" ry="7.724"/>
+            <path d="M24 27.517c0-6.665-5.373-12.069-12-12.069S0 20.852 0 27.518"/>
+        </g>
+    </g>
+</svg>

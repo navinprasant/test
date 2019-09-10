@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="30" viewBox="0 0 90 30">
+    <defs>
+        <rect id="a" width="90" height="30" rx="4"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <use fill="#FFF" xlink:href="#a"/>
+            <rect width="89" height="29" x=".5" y=".5" stroke="#00BCD4" rx="4"/>
+        </g>
+        <g fill="#00BCD4">
+            <text font-family="Helvetica-Bold, Helvetica" font-size="12" font-weight="bold" letter-spacing=".61" transform="translate(17.5 8)">
+                <tspan x="18.5" y="11">Edit</tspan>
+            </text>
+            <path fill-rule="nonzero" d="M25.688 10c-.102 0-.274.086-.375.188L24.5 11l2 2 .813-.812c.199-.2.199-.586 0-.688L26 10.188c0-.2-.21-.188-.313-.188zM24 11.5L17.5 18v2h2l6.5-6.5-2-2z"/>
+        </g>
+    </g>
+</svg>

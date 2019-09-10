@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="109" height="36" viewBox="0 0 109 36">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FDBF28" d="M0 18c0 9.941 8.059 18 18 18h73c9.941 0 18-8.059 18-18S100.941 0 91 0H18C8.059 0 0 8.059 0 18z"/>
+        <text fill="#FFF" font-family="Montserrat-Regular, Montserrat" font-size="14" transform="translate(25 9)">
+            <tspan x=".657" y="14">Confirm</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,0 +1,45 @@
+<div class="login-div" fxLayout="column" fxLayoutAlign="center center">
+	<!-- <md-progress-circular class="action-loader" md-mode="indeterminate" ng-hide="actionLoader"></md-progress-circular> -->
+  <div class="verify-card" fxLayout="column">
+    <img src="assets/icons/logo-diro-kyc.svg" class="login-diro-logo">
+    <div class="bold-text">{{'verify_otp_page.page_title' | translate}}</div>
+    <div>{{'verify_otp_page.text' | translate}} <br> {{userMobile}} <a href="/login">{{'docLinks_page.edit_address' | translate}}</a></div>
+    <div style="width: 100%;" fxLayout="row" fxLayoutAlign="center">
+        <mat-form-field style="margin-top:18px; text-align:center;" floatLabel="never">
+            <input matInput placeholder="Enter Code" name="OTP" [(ngModel)]="otpCode" placeholder="Enter code" (input)="enableVerify()" required>
+        </mat-form-field>
+        <!-- <mat-divider style="background-color:red;"></mat-divider> -->
+      <!-- <md-input-container md-no-float class="input-otp" style="text-align: center;">
+        <input type="text" maxlength="4" numbers-only style="text-align: center;" name="OTP" ng-model="reqotp" placeholder="Enter code" ng-change="enableVerify(reqotp)" required>
+        <span class="invalid-otp" style="text-align: center;" ng-show="invalidOTP">{{'verify_otp_page.wrong_otp_text' | translate}}</span>
+      </md-input-container> -->
+    </div>
+    <div class="invalid-otp" style="text-align: center; width:100%;color:#f44336;font-size: 12px;" *ngIf="invalidOTP">{{'verify_otp_page.wrong_otp_text' | translate}}</div>
+    <div class="timer" fxLayout="row" fxLayoutAlign="end" (click)="getTimeLeft()">
+      0:{{ timeLeft }}
+    </div>
+    <div fxLayout="row">
+      <div flex>
+        <button class="resend-button" (click)="resendOtp()" id="resendCode"
+         [ngStyle] = "{'color': resendButtonColor}" [disabled]='resendCodeDisable'>{{'verify_otp_page.resend_code' | translate}}</button>
+      </div>
+      <div style="margin-left: auto;"> 
+        <button class="resend-button" fxLayout="column" fxLayoutAlign="center" (click)="callRequest()" id="requestCall"
+          style="color: #00bcd4;">{{'verify_otp_page.request_call' | translate}}</button>
+      </div>
+    </div>
+  </div>
+  <footer class="copy-right-text-bottom">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <img src="assets/images/img-appstore.png" width="120" height="35" style="margin-right: 10px">
+      <img src="assets/images/img-playstore.png" width="120" height="35" style="margin-left: 10px">
+    </div><br>
+    <div>
+      <span>&copy; {{'Common_all_page.footer_text' | translate}}</span>
+    </div>
+  </footer>
+</div>
+<img class="emoji-bg-one" src="assets/icons/emoji-bg-one.svg">
+<img class="emoji-bg-two" src="assets/icons/emoji-bg-two.svg">
+<img class="emoji-bg-three" src="assets/icons/emoji-bg-three.svg">
+<img class="emoji-bg-four" src="assets/icons/emoji-bg-four.svg">

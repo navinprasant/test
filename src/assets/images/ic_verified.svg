@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}.cls-2{fill:#2cba44}.cls-3{filter:url(#Oval_2)}
+        </style>
+        <filter id="Oval_2" width="35" height="35" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur" stdDeviation="2.5"/>
+            <feFlood flood-opacity=".38"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="ic_verified" transform="translate(7.5 7.5)">
+        <g class="cls-3" transform="translate(-7.5 -7.5)">
+            <circle id="Oval_2-2" cx="10" cy="10" r="10" class="cls-1" data-name="Oval 2" transform="translate(7.5 7.5)"/>
+        </g>
+        <path id="_" d="M8.75 17.5a8.467 8.467 0 0 1-6.187-2.563A8.467 8.467 0 0 1 0 8.75a8.467 8.467 0 0 1 2.563-6.187A8.467 8.467 0 0 1 8.75 0a8.467 8.467 0 0 1 6.187 2.563A8.467 8.467 0 0 1 17.5 8.75a8.467 8.467 0 0 1-2.563 6.187A8.467 8.467 0 0 1 8.75 17.5zM4.067 8.75l-.888.923L6.8 13.3l7.794-7.8-.922-.888L6.8 11.45z" class="cls-2" data-name="(" transform="translate(1.25 1.25)"/>
+    </g>
+</svg>

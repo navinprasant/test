@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="0 0 74 74">
+    <g fill="none" fill-rule="evenodd">
+        <path stroke="#C2C2C2" stroke-dasharray="2,3" stroke-linecap="square" d="M3 1h68a2 2 0 0 1 2 2v68a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" opacity=".5"/>
+        <text fill="#989898" font-family="Roboto-Medium, Roboto" font-size="12" font-weight="400" transform="translate(1 1)">
+            <tspan x="9.431" y="61">CAPTURE</tspan>
+        </text>
+        <g stroke="#FFA258" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2">
+            <path d="M53.054 44H19V9h34.054v18.035"/>
+            <g transform="translate(24.676 15.149)">
+                <ellipse cx="3.784" cy="2.621" rx="2.27" ry="2.301"/>
+                <path d="M7.19 8.373c0-1.906-1.525-3.452-3.406-3.452-1.881 0-3.406 1.546-3.406 3.452"/>
+            </g>
+            <path d="M22.784 12.784h10.973v11.12H22.784zM39.065 13.73h10.203M39.065 18.46h10.203M39.065 23.19h10.203M22.984 30.284h10.203M22.984 35.014h10.203M22.984 39.743h10.203M39.129 34.54h13.45M49.361 30.284l4.348 4.348-4.348 4.347"/>
+        </g>
+    </g>
+</svg>

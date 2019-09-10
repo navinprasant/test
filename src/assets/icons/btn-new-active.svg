@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="123" height="36" viewBox="0 0 123 36">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FDBF28" d="M0 18c0 9.941 8.059 18 18 18h87c9.941 0 18-8.059 18-18s-8.059-18-18-18H18C8.059 0 0 8.059 0 18z"/>
+        <g fill="#FFF">
+            <text font-family="Montserrat-Regular, Montserrat" font-size="14" letter-spacing=".5" transform="translate(16 9)">
+                <tspan x="26.309" y="14">New FIle</tspan>
+            </text>
+            <text font-family="dfa1" font-size="18" transform="translate(16 9)">
+                <tspan x="0" y="18">~</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

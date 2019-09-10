@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="113" height="36" viewBox="0 0 113 36">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="113" height="36" fill="#000" fill-opacity=".12" rx="18"/>
+        <text fill="#FFF" font-family="Montserrat-Regular, Montserrat" font-size="14" transform="translate(29 9)">
+            <tspan x=".214" y="14">SUBMIT</tspan>
+        </text>
+    </g>
+</svg>

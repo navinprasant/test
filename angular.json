@@ -24,9 +24,15 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/intl-tel-input/build/css/intlTelInput.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/intl-tel-input/build/js/intlTelInput.min.js",
+              "node_modules/intl-tel-input/build/js/utils.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -52,17 +58,30 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "stage": {
+              "fileReplacements": [
+                  {
+                      "replace": "src/environments/environment.ts",
+                      "with": "src/environments/environment.stage.ts"
+                  }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "submit-kyc-test:build"
+            "browserTarget": "submit-kyc-test:build",
+            "sslKey": "~/Desktop/server.key",
+            "sslCert": "~/Desktop>/server.crt"
           },
           "configurations": {
             "production": {
               "browserTarget": "submit-kyc-test:build:production"
+            },
+            "stage": {
+              "browserTarget": "submit-kyc-test:build:stage"
             }
           }
         },
@@ -84,6 +103,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -115,6 +136,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "submit-kyc-test"
 }

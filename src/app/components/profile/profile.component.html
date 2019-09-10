@@ -1,0 +1,75 @@
+
+<div class="dash-body hide-on-mobile-screens" *ngIf="blueBody">
+	<div class="side-navbar profile-side-bar" fxLayout="column">
+		<img src="assets/images/user.png" class="pro-img" *ngIf="user.profileImage == undefined">
+		<img src="{{user.profileImage}}" class="pro-img" *ngIf="user.profileImage != undefined">
+		<span class="pro-name">{{user.doc.firstname}} {{user.doc.lastname}}</span>
+		<span class="pro-country">{{sideDob}}</span>
+		<mat-divider></mat-divider>
+		<ul class="list-profile">
+			<li fxLayout="column">
+				<label>{{'profile_edit_page.phone' | translate}}</label>
+				<span>{{user.doc.mcc}} {{user.doc.mobile}}</span>
+			</li>
+			<li fxLayout="column">
+				<label>{{'form_page.input_email' | translate}}</label>
+				<span>{{user.doc.email}}</span>
+			</li>
+			<li fxLayout="column" *ngIf="user.doc.address">
+				<label>{{'wallet_enter_page.input_public_br_address' | translate}}</label>
+				<!-- <span>{{user.doc.address.street + ", " + user.doc.address.city + ", " + user.doc.address.state + ", " + user.doc.address.country + " " + user.doc.address.zip}}</span> -->
+			</li>
+		</ul>
+		<div class="diro-info">
+			<span style="color: rgba(0,0,0,0.84);">{{'profile_edit_page.member_since' | translate}}: </span>{{memberSince}}
+		</div>
+	</div>
+	<div class="rest-body" fxLayout="column" style="float: right;">
+		<div class="dash-subheader" style="padding-top: 0px;" fxLayout="column" fxLayoutAlign="center">
+			<div fxLayout="row" class="pro-edit-subheader">
+				<a href="/docType">{{'Common_all_page.home' | translate}}&nbsp;</a> &gt; {{'profile_edit_page.my_profile' | translate}}
+			</div>			
+		</div>
+		<div class="pro-edit-square" fxLayout="column">
+			<form name="profile_form" fxLayout="column">
+				<label class="title">{{'profile_edit_page.profile_info' | translate}}</label>
+				<span>{{'profile_edit_page.form_subtitle' | translate}}</span>
+				<img src="assets/icons/ic-avatar.svg" class="pro-edit-pic" (click)="openCameraCapture()" *ngIf="!clickbase64">
+				<span class="pro-edit-pic-text" (click)="openCameraCapture()" *ngIf="!clickbase64">{{'form_page.add_photo' | translate}}</span>
+				<img src="{{clickbase64}}" class="pro-edit-pic" (click)="openCameraCapture()" *ngIf="clickbase64">
+				<span class="pro-edit-pic-text" (click)="openCameraCapture()" *ngIf="clickbase64">{{'form_page.change_photo' | translate}}</span>
+				<table class="pro-edit">
+					<tbody>
+						<tr>
+							<td class="input-label">{{'dashboard_page.row_title_name' | translate}}</td>
+							<td class="input-cell">
+                                <mat-form-field class="country-code" floatLabel="never" class="half-input" style="margin-right: 18px;">
+
+                                        <input matInput type="text" name="first_name" placeholder="First name" [(ngModel)]="firstName" [disabled]="user.idProofStatus == 'verified' || user.addressProofStatus == 'verified'" required>
+                                        <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span>
+
+                                </mat-form-field>
+                                <mat-form-field class="country-code" floatLabel="never" class="half-input" style="margin-right: 18px;">
+                                    <input matInput type="text" name="last_name" placeholder="Last name" [(ngModel)]="lastName" [disabled]="user.idProofStatus == 'verified' || user.addressProofStatus == 'verified'" required>
+                                    <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span>
+                                </mat-form-field>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="camera-click" fxLayout="column" *ngIf="blueBody">
+  <div fxLayout="row" fxLayoutAlign="end"><img src="assets/icons/ic-small-close.svg" class="close-webcam" (click)="cancelClick()"></div>
+  <div fxLayout="row" fxLayoutAlin="center">
+    <video id="video" width="640" height="480" autoplay></video>
+    <img src="{{clickbase64}}" width="640" height="480" id="clickedImage">
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <img src="assets/icons/ic-close-webcam.svg" class="click-pic-button cancel-webcam-button" (click)="cancelClick()" *ngIf="clickbtns">
+    <img src="assets/icons/ic-take-photo.svg" class="click-pic-button" (click)="captureClick()" *ngIf="clickbtns">
+    <button mat-button class="upload-btn cancel-webcam-button" *ngIf="clickbtns" (click)="cancelClick()">
+    	<img src="assets/icons/cancel-camera-click.svg">&nbsp;&nbsp;Cancel</button>
+    <button mat-button class="upload-btn" *ngIf="clickbtns" (click)="updateProfile()"><img src="assets/icons/accept-camera-click.svg">&nbsp;&nbsp;Accept</button>
+  </div>
+</div>

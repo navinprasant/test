@@ -1,0 +1,93 @@
+<div class="login-div" [ngStyle]="formBgPosition" fxLayout="column" *ngIf="blueBody" id="formCard">
+    <div hide-xs hide-sm>
+        <img class="emoji-bg-one" src="assets/icons/emoji-bg-one.svg">
+        <img class="emoji-bg-two" src="assets/icons/emoji-bg-two.svg">
+        <img class="emoji-bg-three" src="assets/icons/emoji-bg-three.svg">
+        <img class="emoji-bg-four" src="assets/icons/emoji-bg-four.svg">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+        <div class="verify-card" fxLayout="column" style="margin-top: 80px;">
+            <div class="bold-text"> {{'form_page.page_title' | translate}} </div>
+            <mat-card-content style="background-color: #ffffff;">
+                <form name="projectForm">
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <div fxLayout="column">
+                            <img src="assets/icons/ic-avatar.svg" *ngIf="!clickbase64" class="add-photo-icon"
+                                (click)="openCameraCapture()">
+                            <img src="{{clickbase64}}" *ngIf="clickbase64" class="add-photo-icon"
+                                (click)="openCameraCapture()">
+                            <label class="add-photo-text" *ngIf="!clickbase64" (click)="openCameraCapture()">{{'form_page.add_photo' | translate}}</label>
+                            <label class="add-photo-text" *ngIf="clickbase64" (click)="openCameraCapture()">{{'form_page.change_photo' | translate}}</label>
+                        </div>
+                    </div>
+                    <div class="mobile-input-field" fxLayout="row">
+                        <mat-form-field class="input-number-new">
+                            <input matInput placeholder="{{'form_page.input_first_name' | translate}}" name="fname"
+                                (change)="enableContinue()" [(ngModel)]="firstName" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="mobile-input-field" fxLayout="row">
+                            <mat-form-field class="input-number-new">
+                                <input matInput placeholder="{{'form_page.input_last_name' | translate}}" name="lname"
+                                (change)="enableContinue()" [(ngModel)]="lastName" required>
+                            </mat-form-field>
+                    </div>
+                    <div class="mobile-input-field" fxLayout="row">
+                            <mat-form-field class="input-number-new">
+                                <input matInput placeholder="{{'form_page.input_dob_placeholder' | translate}}" name="dob"
+                                (change)="enableContinue()" [(ngModel)]="dateOfBirth" required>
+                            </mat-form-field>
+                    </div>
+
+
+                    <div class="mobile-input-field" fxLayout="row">
+                            <mat-form-field class="input-number-new">
+                                <input matInput placeholder="{{'form_page.input_email' | translate}}" name="email"
+                                    (change)="enableContinue()" [(ngModel)]="email" required>
+                            </mat-form-field>
+                    </div>
+                    <div style="width: 100%" fxLayout="row" fxLayoutAlign="end">
+                            <button class="next-button" fxLayout="column" fxLayoutAlign="center"
+                             id="saveProfile" [disabled]="saveProfiledisabled"
+                             (click)="createNewMX(firstName,lastName,dateOfBirth,email)"  [ngStyle]="{'background-color':nextBtnBgColor}">
+                             {{'form_page.continue' | translate}}
+                            </button>
+                    </div>
+                </form>
+                <div fxLayout="row" class="or-wrap"> 
+                    <div class="or">{{'form_page.or' | translate}}</div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="50" class="left">
+                      <br><img src="assets/images/facebook.png" class="social-icon" (click)="facebook()" role="button">
+                    </div>
+                    <div fxFlex="50" class="right">
+                      <br><img src="assets/images/linkedin.png" class="social-icon" (click)="linkedin()" role="button">
+                    </div>
+                </div>
+            </mat-card-content>
+            <!-- mat-card-content -->
+        </div>
+        <!-- verify-card -->
+    </div>
+    <footer class="copy-right-text-bottom" style="position: relative;margin-top: 60px;">
+        <div fxLayout="row" fxLayoutAlign="center">
+          <img src="assets/images/img-appstore.png" width="120" height="35" style="margin-right: 10px">
+          <img src="assets/images/img-playstore.png" width="120" height="35" style="margin-left: 10px">
+        </div><br>
+        <div fxLayout="row" fxLayoutAlign="center">
+            <span>&copy; {{'Common_all_page.footer_text' | translate}}</span>
+        </div>
+      </footer>
+</div>
+    <!-- <div>code for camera</div> -->
+    <div class="camera-click" fxLayout="column" *ngIf="!blueBody">
+        <div fxLayout="row" fxLayoutAlign="end"><img src="assets/icons/ic-small-close.svg" class="close-webcam" (click)="cancelClick()"></div>
+        <div fxLayout="row" fxLayoutAlign="center">
+          <video id="video" width="640" height="480" autoplay></video>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center">
+          <img src="assets/icons/ic-close-webcam.svg" class="cancel-webcam-button" (click)="cancelClick()">
+          <img src="assets/icons/ic-take-photo.svg" class="click-pic-button" (click)="captureClick()">
+        </div>
+    </div>

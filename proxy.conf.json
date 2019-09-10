@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://stage.dirolabs.com:8440",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel":"debug",
+      "pathRewrite": {"^/api" : ""}
+    }
+  }

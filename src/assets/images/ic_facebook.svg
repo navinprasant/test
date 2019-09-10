@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31.987" height="32" viewBox="0 0 31.987 32">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:rgba(0,0,0,.12);stroke-miterlimit:10;stroke-width:.5px}.cls-2{fill:#3f51b5}.cls-3{stroke:none}.cls-4{fill:none}
+        </style>
+    </defs>
+    <g id="ic_facebook" transform="translate(-1)">
+        <g id="Group_2" data-name="Group 2">
+            <g id="Group_7" data-name="Group 7">
+                <g id="Oval_3" class="cls-1" data-name="Oval 3" transform="translate(1)">
+                    <ellipse cx="15.993" cy="16" class="cls-3" rx="15.993" ry="16"/>
+                    <ellipse cx="15.993" cy="16" class="cls-4" rx="15.743" ry="15.75"/>
+                </g>
+                <path id="S" d="M3.852 13.091V6.545h1.739L5.8 4.3H3.852V3.17a1.238 1.238 0 0 1 .153-.716q.153-.2.7-.2H5.8V0H4.057q-2.8 0-2.8 2.932V4.3H0v2.25h1.261v6.545z" class="cls-2" transform="translate(13.102 9.727)"/>
+            </g>
+        </g>
+    </g>
+</svg>

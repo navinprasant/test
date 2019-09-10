@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ic_close" width="14" height="14" viewBox="0 0 14 14">
+    <defs>
+        <style>
+            .cls-1{fill:rgba(0,0,0,.54)}
+        </style>
+    </defs>
+    <path id="G" d="M1.23 0L0 1.23 5.77 7 0 12.77 1.23 14 7 8.23 12.77 14 14 12.77 8.23 7 14 1.23 12.77 0 7 5.77z" class="cls-1"/>
+</svg>
