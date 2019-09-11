@@ -1,65 +1,168 @@
+<mat-toolbar class="mat-navbar">
+	<img src="assets/icons/logo-diro.svg" class="logo-diro">
+	<div class="center-heading " fxLayout="column" fxLayoutAlign="center center">
+		<div class="diro-kyc" style="color:#fff;">{{'Common_all_page.diro_kyc' | translate}}</div>
+		<div class="subheading" style="color:#fff;">{{'Common_all_page.header_text' | translate}}</div>
+	</div>
+	<div><img src="assets/images/user.png" class="user-logo" (click)="showPro()"></div>
 
-<div class="dash-body hide-on-mobile-screens" *ngIf="blueBody">
+</mat-toolbar>
+<!-- <mat-card>Simple card</mat-card> -->
+<div class="dash-body hide-on-mobile-screens">
 	<div class="side-navbar profile-side-bar" fxLayout="column">
-		<img src="assets/images/user.png" class="pro-img" *ngIf="user.profileImage == undefined">
-		<img src="{{user.profileImage}}" class="pro-img" *ngIf="user.profileImage != undefined">
-		<span class="pro-name">{{user.doc.firstname}} {{user.doc.lastname}}</span>
-		<span class="pro-country">{{sideDob}}</span>
+		<img src="assets/images/user.png" class="pro-img">
+		<!-- <img src="{{user.profileImage}}" class="pro-img" *ngIf="user.profileImage != undefined"> -->
+		<span class="pro-name">{{ user.doc.firstname }} {{ user.doc.lastname }} </span>
+		<span class="pro-country"> {{ sideDob }}</span>
 		<mat-divider></mat-divider>
 		<ul class="list-profile">
 			<li fxLayout="column">
 				<label>{{'profile_edit_page.phone' | translate}}</label>
-				<span>{{user.doc.mcc}} {{user.doc.mobile}}</span>
+				<span>{{ user.doc.mcc }}  {{user.doc.mobile}}</span>
 			</li>
 			<li fxLayout="column">
-				<label>{{'form_page.input_email' | translate}}</label>
-				<span>{{user.doc.email}}</span>
+				<label>{{ 'form_page.input_email' | translate }}</label>
+				<span>{{ user.doc.email }}</span>
 			</li>
-			<li fxLayout="column" *ngIf="user.doc.address">
+			<li fxLayout="column">
 				<label>{{'wallet_enter_page.input_public_br_address' | translate}}</label>
-				<!-- <span>{{user.doc.address.street + ", " + user.doc.address.city + ", " + user.doc.address.state + ", " + user.doc.address.country + " " + user.doc.address.zip}}</span> -->
 			</li>
 		</ul>
 		<div class="diro-info">
-			<span style="color: rgba(0,0,0,0.84);">{{'profile_edit_page.member_since' | translate}}: </span>{{memberSince}}
+			<span style="color: rgba(0,0,0,0.84);">{{'profile_edit_page.member_since' | translate}}:
+			</span>{{memberSince}}
 		</div>
 	</div>
 	<div class="rest-body" fxLayout="column" style="float: right;">
 		<div class="dash-subheader" style="padding-top: 0px;" fxLayout="column" fxLayoutAlign="center">
 			<div fxLayout="row" class="pro-edit-subheader">
-				<a href="/docType">{{'Common_all_page.home' | translate}}&nbsp;</a> &gt; {{'profile_edit_page.my_profile' | translate}}
-			</div>			
+				<a href="/docType">{{'Common_all_page.home' | translate}}&nbsp;</a> &gt;
+				{{'profile_edit_page.my_profile' | translate}}
+			</div>
 		</div>
 		<div class="pro-edit-square" fxLayout="column">
 			<form name="profile_form" fxLayout="column">
 				<label class="title">{{'profile_edit_page.profile_info' | translate}}</label>
 				<span>{{'profile_edit_page.form_subtitle' | translate}}</span>
-				<img src="assets/icons/ic-avatar.svg" class="pro-edit-pic" (click)="openCameraCapture()" *ngIf="!clickbase64">
-				<span class="pro-edit-pic-text" (click)="openCameraCapture()" *ngIf="!clickbase64">{{'form_page.add_photo' | translate}}</span>
+				<img src="assets/icons/ic-avatar.svg" class="pro-edit-pic" (click)="openCameraCapture()"
+					*ngIf="!clickbase64">
+				<span class="pro-edit-pic-text" (click)="openCameraCapture()"
+					*ngIf="!clickbase64">{{'form_page.add_photo' | translate}}</span>
 				<img src="{{clickbase64}}" class="pro-edit-pic" (click)="openCameraCapture()" *ngIf="clickbase64">
-				<span class="pro-edit-pic-text" (click)="openCameraCapture()" *ngIf="clickbase64">{{'form_page.change_photo' | translate}}</span>
+				<span class="pro-edit-pic-text" (click)="openCameraCapture()"
+					*ngIf="clickbase64">{{'form_page.change_photo' | translate}}</span>
 				<table class="pro-edit">
 					<tbody>
 						<tr>
 							<td class="input-label">{{'dashboard_page.row_title_name' | translate}}</td>
 							<td class="input-cell">
-                                <mat-form-field class="country-code" floatLabel="never" class="half-input" style="margin-right: 18px;">
+								<mat-form-field class="country-code" floatLabel="never" class="half-input"
+									style="margin-right: 18px;" appearance="outline">
+									<input matInput type="text" name="first_name" placeholder="First name"
+										[(ngModel)]="firstName" required>
+									<!-- <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span> -->
+								</mat-form-field>
+								<mat-form-field class="country-code" floatLabel="never" class="half-input"
+									appearance="outline">
+									<input matInput type="text" name="last_name" placeholder="Last name"
+										[(ngModel)]="lastName" required>
+									<!-- <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span> -->
+								</mat-form-field>
+							</td>
+						</tr>
 
-                                        <input matInput type="text" name="first_name" placeholder="First name" [(ngModel)]="firstName" [disabled]="user.idProofStatus == 'verified' || user.addressProofStatus == 'verified'" required>
-                                        <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span>
+						<tr>
+							<td class="input-label">{{'form_page.input_dob' | translate}}</td>
+							<td class="input-cell">
+								<mat-form-field style="display:block;" appearance="outline">
+									<input matInput [matDatepicker]="picker" [formControl]="date" placeholder="Choose a date" name="dob"
+										 (dateChange)="addEvent('change', $event)" [value]="date.value">
+									<!-- <input matInput [matDatepicker]="datepicker1" placeholder="Start Date" [(ngModel)]="startDate" required> -->
+									<mat-datepicker-toggle matSuffix [for]="picker">
+										<mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+									</mat-datepicker-toggle>
+									<mat-datepicker #picker color="green"></mat-datepicker>
+								</mat-form-field>
+							</td>
+						</tr>
 
-                                </mat-form-field>
-                                <mat-form-field class="country-code" floatLabel="never" class="half-input" style="margin-right: 18px;">
-                                    <input matInput type="text" name="last_name" placeholder="Last name" [(ngModel)]="lastName" [disabled]="user.idProofStatus == 'verified' || user.addressProofStatus == 'verified'" required>
-                                    <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span>
-                                </mat-form-field>
+
+						<tr>
+							<td class="input-label">{{'wallet_enter_page.input_public_br_address' | translate}}</td>
+							<td class="input-cell">
+								<mat-form-field md-no-float class="full-input" appearance="outline">
+									<input matInput type="text" name="address_lane"
+										placeholder="Enter address (area and street)" [(ngModel)]="addressLane" required>
+									<!-- <span class="error-form" ng-show="(profile_form.address_lane.$touched && profile_form.address_lane.$invalid) || errorlane">{{'profile_edit_page.address_error' | translate}}</span> -->
+								</mat-form-field>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="input-label">{{'docLinks_page.city_placeholder' | translate}}</td>
+							<td class="input-cell">
+								<mat-form-field md-no-float class="full-input" appearance="outline">
+									<input matInput type="text" name="city"
+										placeholder="Enter address (area and street)" [(ngModel)]="addressCity" required>
+									<!-- <span class="error-form" ng-show="(profile_form.address_lane.$touched && profile_form.address_lane.$invalid) || errorlane">{{'profile_edit_page.address_error' | translate}}</span> -->
+								</mat-form-field>
+							</td>
+						</tr>
+
+
+						<tr>
+							<td class="input-label">{{'docLinks_page.country_placeholder' | translate}}</td>
+							<td class="input-cell">
+								<mat-form-field class="full-input" floatLabel="never" appearance="outline">
+									<!-- <mat-label floatLabel="never">Country</mat-label> -->
+									<mat-select [(ngModel)]="addressCountry" name="country" placeholder="Country">
+											<mat-option *ngFor="let c of allCountries" [value]="c.country">
+													{{c.country}}
+											</mat-option>
+									</mat-select>
+								</mat-form-field>
+							</td>
+						</tr>
+						<tr>
+							<td class="input-label">{{'docLinks_page.zip_code' | translate}}</td>
+							<td class="input-cell">
+								<mat-form-field class="full-input" appearance="outline">
+									<input matInput type="text" name="address_zip"
+										placeholder="Enter address (area and street)" [(ngModel)]="addressZipCode" required>
+									<!-- <span class="error-form" ng-show="(profile_form.address_lane.$touched && profile_form.address_lane.$invalid) || errorlane">{{'profile_edit_page.address_error' | translate}}</span> -->
+								</mat-form-field>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="input-label">{{'docLinks_page.state_placeholder' | translate}}</td>
+							<td class="input-cell">
+								<mat-form-field class="full-input" appearance="outline">
+									<!-- <mat-label>State</mat-label> -->
+									<mat-select [(ngModel)]="selectedValue" name="state" floatLabel="never">
+											<mat-option *ngFor="let s of allStates" [value]="s">
+													{{s}}
+											</mat-option>
+									</mat-select>
+								</mat-form-field>
+							</td>
+						</tr>
+						<tr>
+							<td class="input-label"></td>
+							<td class="input-cell">
+								<div fxLayout="row" fxLayoutAlign="end">
+									<button mat-button class="submit-btn"
+										(click)="updateProfile()">{{'profile_edit_page.update_btn' | translate}}</button>
+								</div>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</form>
 		</div>
 	</div>
 </div>
-<div class="camera-click" fxLayout="column" *ngIf="blueBody">
+<!-- <div class="camera-click" fxLayout="column" *ngIf="blueBody">
   <div fxLayout="row" fxLayoutAlign="end"><img src="assets/icons/ic-small-close.svg" class="close-webcam" (click)="cancelClick()"></div>
   <div fxLayout="row" fxLayoutAlin="center">
     <video id="video" width="640" height="480" autoplay></video>
@@ -72,4 +175,4 @@
     	<img src="assets/icons/cancel-camera-click.svg">&nbsp;&nbsp;Cancel</button>
     <button mat-button class="upload-btn" *ngIf="clickbtns" (click)="updateProfile()"><img src="assets/icons/accept-camera-click.svg">&nbsp;&nbsp;Accept</button>
   </div>
-</div>
+</div> -->

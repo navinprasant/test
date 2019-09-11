@@ -1,3 +1,144 @@
+
+.dash-body {
+    height: 100%;
+    background-color:#fff! important;
+    margin:0;
+    /* opacity: 1 !important; */
+}
+
+  .mat-navbar {
+    justify-content: space-between;
+    background-color: rgb(0, 188, 212);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(0, 188, 212);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: visible;
+    position: fixed;
+    z-index: 4;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.pro-triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 14px solid white;
+    margin-top: 1px;
+    float: right !important;
+    top: 56.8px;
+    right: 45px;
+    z-index: 9999 !important;
+    position: fixed;
+}
+
+
+.pro-card {
+    width: 320px;
+    height: 274.1px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
+    background-color: rgb(255, 255, 255);
+    border: solid 0.5px rgb(175, 175, 175);
+    border-top: 0px;
+    top: 66.8px;
+    right: 9px;
+    /* z-index: 9999 !important; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.54);
+    /* padding-top: 28px; */
+    /* position: fixed; */
+}
+
+.pro-card .user-logo-sq {
+    width: 75px;
+    height: 75px;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.pro-card {
+    width: 320px;
+    height: 274.1px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
+    background-color: rgb(255, 255, 255);
+    border: solid 0.5px rgb(175, 175, 175);
+    border-top: 0px;
+    top: 66.8px;
+    right: 9px;
+    /* z-index: 9999 !important; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.54);
+    /* padding-top: 28px; */
+    /* position: fixed; */
+}
+
+.pro-card .name {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.user-logo {
+    width: 35.9px;
+    height: 35.9px;
+    border-radius: 50%;
+    margin-top: 3px;
+    float: right;
+    position: relative;
+    margin-right: 20.1px;
+}
+
+
 .dash-body {
     width: 100% !important;
     min-height: 100% !important;
@@ -13,3 +154,283 @@
     text-align: center;
     color: rgba(0, 0, 0, 0.84);
 }
+
+.dash-body .side-navbar {
+    width: 212px;
+    min-height: 100% !important;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.12);
+    font-family: Montserrat !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.84);
+    padding-left: 16px;
+    padding-top: 23px;
+    top: 70px;
+    left: 0px;
+    position: fixed;
+    z-index: 1;
+}
+
+.rest-body {
+    width: calc(100% - 214px);
+    min-height: 100%;
+}
+
+dash-body .profile-side-bar .pro-img {
+    width: 99.7px;
+    height: 99.7px;
+    border-radius: 50%;
+    margin-bottom: 13.3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dash-body .profile-side-bar .pro-name {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.dash-body .profile-side-bar .pro-country {
+    display: block;
+    margin-bottom: 19px;
+}
+
+.dash-body .profile-side-bar {
+    padding: 28px 15px 16px 17px;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.84);
+}
+
+.dash-body .profile-side-bar ul.list-profile {
+    list-style-type: none;
+    list-style: none;
+    padding: 0px;
+    padding-top: 22px;
+}
+
+dash-body .side-navbar .diro-info {
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.38);
+    position: fixed;
+    z-index: 2;
+    left: 4px;
+    bottom: 18px;
+}
+
+.dash-body .dash-subheader {
+    width: calc(100% - 214px);
+    height: 63px;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+    margin: 1px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.84);
+    padding-top: 15px;
+    padding-left: 19px;
+    padding-right: 20px;
+    float: right;
+    top: 60px;
+    right: 0px;
+    position: fixed;
+    z-index: 1;
+}
+
+.dash-body .rest-body .dash-subheader .pro-edit-subheader {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--black-54);
+}
+
+.dash-body .rest-body .pro-edit-square {
+    width: calc(100% - 48px);
+    height: 100%;
+    padding-top: 24px;
+    padding-bottom: 37px;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    color: var(--black-54);
+    border: solid 1px rgba(0, 0, 0, 0.12);
+    margin-left: 24px;
+    margin-top: 100px;
+    background-color: #ffffff;
+}
+
+.dash-body .rest-body .pro-edit-square label.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 2px;
+}
+
+.dash-body .rest-body .pro-edit-square span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.dash-body .rest-body .pro-edit-square table.pro-edit {
+    width: 100%;
+    height: auto;
+    border: 0px;
+    outline: none;
+}
+
+.dash-body .rest-body .pro-edit-square label.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 2px;
+}
+
+.dash-body .rest-body .pro-edit-square img.pro-edit-pic {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.dash-body .rest-body .pro-edit-square span.pro-edit-pic-text {
+    color: #00bcd4;
+    padding-top: 4px;
+    cursor: pointer;
+}
+
+.dash-body .rest-body .pro-edit-square span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+.dash-body .rest-body .pro-edit-square table.pro-edit tr > td.input-label {
+    width: 30%;
+    height: 40px;
+    text-align: right;
+    font-weight: 300;
+    padding-right: 16px;
+}
+
+.dash-body .rest-body .pro-edit-square table.pro-edit tr > td.input-cell {
+    width: 70%;
+    height: 30px;
+    text-align: left;
+    font-weight: 400;
+    padding-right: 20%;
+}
+
+.dash-body .rest-body .pro-edit-square table.pro-edit tr > td.input-cell mat-form-field.half-input {
+    width: calc(50% - 10px);
+}
+
+.dash-body .rest-body .pro-edit-square table.pro-edit tr > td.input-cell mat-form-field.full-input {
+    width: 100%;
+}
+.dash-body .rest-body .pro-edit-square table.pro-edit tr > td.input-cell .submit-btn {
+    width: auto;
+    height: 36px;
+    border-radius: 18px;
+    background-color: #fdb828;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+}
+
+.dash-body .profile-side-bar .pro-img {
+    width: 99.7px;
+    height: 99.7px;
+    border-radius: 50%;
+    margin-bottom: 13.3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dash-body .profile-side-bar .pro-name {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.dash-body .profile-side-bar .pro-country {
+    display: block;
+    margin-bottom: 19px;
+}
+
+.dash-body .profile-side-bar ul.list-profile {
+    list-style-type: none;
+    list-style: none;
+    padding: 0px;
+    padding-top: 22px;
+}
+
+.dash-body .profile-side-bar {
+    padding: 28px 15px 16px 17px;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.84);
+}
+
+.dash-body .side-navbar {
+    width: 212px;
+    min-height: 100% !important;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.12);
+    font-family: Montserrat !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.84);
+    padding-left: 16px;
+    padding-top: 23px;
+    top: 70px;
+    left: 0px;
+    position: fixed;
+    z-index: 1;
+}
+
+.dash-body .side-navbar .diro-info {
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.38);
+    position: fixed;
+    z-index: 2;
+    left: 4px;
+    bottom: 18px;
+}
+
+/* .dash-body .rest-body .pro-edit-square table.pro-edit tr > td.input-cell mat-form-field {
+    border-radius: 1px;
+    border: solid 1px rgba(0, 0, 0, 0.12);
+    padding-left: 15px;
+    height: 40px;
+} */

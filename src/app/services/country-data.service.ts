@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment} from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,11 @@ export class CountryDataService {
 
     getCountryData() : Observable<any>
     {
-      var allCountries = [];
-      document.body.style.opacity = "0.5";
       return this.http.get<any>("https://prod.dirolabs.com:8443/Zuul-1.0/VerifiedCountryDetail-2.0/getVerifiedCountry");
+    }
+
+    getCountryWithStates() {
+      return this.http.get<any>(environment.country_with_states);
     }
 
    getGeoIp () : Observable<any> {

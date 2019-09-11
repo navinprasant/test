@@ -3,9 +3,9 @@
 
 html, body {
     height: 100%;
-    background-color:rgb(0, 188, 212);
+    /* background-color:rgb(0, 188, 212); */
     margin:0;
-    opacity: 1 !important;
+    /* opacity: 1 !important; */
     
 }
 body {
@@ -54,12 +54,12 @@ body {
     bottom: 162px;
     right: 36px;
 }
-.country-code {
+/* .country-code {
     width: 85px;
     height: 48px;
     font-size: 16px;
     margin-top: 38px;
-}
+} */
 
 
 
