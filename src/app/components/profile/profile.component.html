@@ -7,11 +7,9 @@
 	<div><img src="assets/images/user.png" class="user-logo" (click)="showPro()"></div>
 
 </mat-toolbar>
-<!-- <mat-card>Simple card</mat-card> -->
-<div class="dash-body hide-on-mobile-screens">
+<!-- <div class="dash-body hide-on-mobile-screens">
 	<div class="side-navbar profile-side-bar" fxLayout="column">
 		<img src="assets/images/user.png" class="pro-img">
-		<!-- <img src="{{user.profileImage}}" class="pro-img" *ngIf="user.profileImage != undefined"> -->
 		<span class="pro-name">{{ user.doc.firstname }} {{ user.doc.lastname }} </span>
 		<span class="pro-country"> {{ sideDob }}</span>
 		<mat-divider></mat-divider>
@@ -60,13 +58,11 @@
 									style="margin-right: 18px;" appearance="outline">
 									<input matInput type="text" name="first_name" placeholder="First name"
 										[(ngModel)]="firstName" required>
-									<!-- <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span> -->
 								</mat-form-field>
 								<mat-form-field class="country-code" floatLabel="never" class="half-input"
 									appearance="outline">
 									<input matInput type="text" name="last_name" placeholder="Last name"
 										[(ngModel)]="lastName" required>
-									<!-- <span class="error-form" ng-show="(profile_form.first_name.$touched && profile_form.first_name.$invalid) || errorFirstName">{{'profile_edit_page.first_name_error' | translate}}</span> -->
 								</mat-form-field>
 							</td>
 						</tr>
@@ -76,8 +72,7 @@
 							<td class="input-cell">
 								<mat-form-field style="display:block;" appearance="outline">
 									<input matInput [matDatepicker]="picker" [formControl]="date" placeholder="Choose a date" name="dob"
-										 (dateChange)="addEvent('change', $event)" [value]="date.value">
-									<!-- <input matInput [matDatepicker]="datepicker1" placeholder="Start Date" [(ngModel)]="startDate" required> -->
+										 (dateChange)="addEvent('change', $event)">
 									<mat-datepicker-toggle matSuffix [for]="picker">
 										<mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
 									</mat-datepicker-toggle>
@@ -93,7 +88,6 @@
 								<mat-form-field md-no-float class="full-input" appearance="outline">
 									<input matInput type="text" name="address_lane"
 										placeholder="Enter address (area and street)" [(ngModel)]="addressLane" required>
-									<!-- <span class="error-form" ng-show="(profile_form.address_lane.$touched && profile_form.address_lane.$invalid) || errorlane">{{'profile_edit_page.address_error' | translate}}</span> -->
 								</mat-form-field>
 							</td>
 						</tr>
@@ -104,7 +98,6 @@
 								<mat-form-field md-no-float class="full-input" appearance="outline">
 									<input matInput type="text" name="city"
 										placeholder="Enter address (area and street)" [(ngModel)]="addressCity" required>
-									<!-- <span class="error-form" ng-show="(profile_form.address_lane.$touched && profile_form.address_lane.$invalid) || errorlane">{{'profile_edit_page.address_error' | translate}}</span> -->
 								</mat-form-field>
 							</td>
 						</tr>
@@ -128,7 +121,6 @@
 								<mat-form-field class="full-input" appearance="outline">
 									<input matInput type="text" name="address_zip"
 										placeholder="Enter address (area and street)" [(ngModel)]="addressZipCode" required>
-									<!-- <span class="error-form" ng-show="(profile_form.address_lane.$touched && profile_form.address_lane.$invalid) || errorlane">{{'profile_edit_page.address_error' | translate}}</span> -->
 								</mat-form-field>
 							</td>
 						</tr>
@@ -159,7 +151,7 @@
 			</form>
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- <div class="camera-click" fxLayout="column" *ngIf="blueBody">
   <div fxLayout="row" fxLayoutAlign="end"><img src="assets/icons/ic-small-close.svg" class="close-webcam" (click)="cancelClick()"></div>
   <div fxLayout="row" fxLayoutAlin="center">

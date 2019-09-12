@@ -13,6 +13,7 @@ export class ConsentManagementComponent implements OnInit {
   user = JSON.parse(localStorage.getItem("saveAllUserData"));
   userName = this.user.doc.firstname;
   userPro: any;
+  userMCC: any;
 
   constructor(
     private commonService: CommonService,
@@ -44,7 +45,11 @@ export class ConsentManagementComponent implements OnInit {
   }
 
   setUserData() {
-      if(this.user.data.doc.lastname != undefined && user.data.doc.lastname != "undefined" && user.data.doc.lastname != null && user.data.doc.lastname != "null" && user.data.doc.lastname != "")
+      if(this.user.data.doc.lastname != undefined && 
+        this.user.data.doc.lastname != "undefined" && 
+        this.user.data.doc.lastname != null && 
+        this.user.data.doc.lastname != "null" 
+        && this.user.data.doc.lastname != "")
     {
       this.userName = this.user.doc.firstname + " " + this.user.doc.lastname;
     }
@@ -53,7 +58,7 @@ export class ConsentManagementComponent implements OnInit {
       this.userPro = this.user.profileImage;
     }
 
-    $scope.userMCC = user.data.doc.mcc;
+    this.userMCC = this.user.doc.mcc;
 //     $scope.userMobile = user.data.doc.mobile;
 //     $scope.allOrgsrect = true;
 //     $scope.actionLoader = false;

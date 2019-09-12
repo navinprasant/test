@@ -1,0 +1,70 @@
+.pro-card {
+    width: 320px;
+    height: 274.1px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.38);
+    background-color: rgb(255, 255, 255);
+    border: solid 0.5px rgb(175, 175, 175);
+    border-top: 0px;
+    top: 66.8px;
+    right: 9px;
+    z-index: 9999 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.54);
+    padding-top: 28px;
+    position: fixed;
+}
+.user-logo-sq {
+    width: 75px;
+    height: 75px;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+.pro-card .name {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+.pro-card .contact {
+    font-size: 13px;
+}
+pro-card a.view-pro:visited {
+    width: 115px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: rgb(253, 191, 40);
+    font-size: 12px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 12px;
+}
+
+.pro-card a.view-pro:link {
+    width: 115px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: rgb(253, 191, 40);
+    font-size: 12px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 12px;
+}
+
+.pro-card .card-text {
+    margin-left: 33px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+.pro-card .ic-logout {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 10px;
+    cursor: pointer;
+}

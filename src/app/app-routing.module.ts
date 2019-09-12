@@ -9,7 +9,8 @@ import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ConsentManagementComponent } from './components/consent-management/consent-management.component';;
-
+import { ProfilecardComponent } from './components/profilecard/profilecard.component';;
+import { HeaderComponent } from './components/header/header.component';
 const appRoutes: Routes = [
   { path: 'login', component: SigninComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -43,6 +44,8 @@ const appRoutes: Routes = [
   { path: 'redirectad', component: KycFormComponent },
   { path: 'boards/:token/:btnid', component: KycFormComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'test', component: ProfilecardComponent },
+  { path: 'header', component: HeaderComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

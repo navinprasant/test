@@ -50,6 +50,9 @@ import { MaterialModule } from './material/material.module';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { SuccessComponent } from './dialogs/success/success.component';
+import { ProfilecardComponent } from './components/profilecard/profilecard.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 let config = new AuthServiceConfig([
   {
@@ -100,7 +103,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     WalletDetailsComponent,
     WalletEntryComponent,
     TestComponent,
-    SuccessComponent
+    SuccessComponent,
+    ProfilecardComponent,
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

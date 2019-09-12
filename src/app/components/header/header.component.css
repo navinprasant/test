@@ -1,0 +1,17 @@
+.mat-navbar {
+    justify-content: space-between;
+    background-color: rgb(0, 188, 212);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    /* z-index: 1000; */
+  }
+  .user-logo {
+    width: 35.9px;
+    height: 35.9px;
+    border-radius: 50%;
+    margin-top: 3px;
+    float: right;
+    position: relative;
+    margin-right: 20.1px;
+}

@@ -42,8 +42,10 @@
 		</div>
 	</div>	
 </header> -->
+<app-header></app-header>
 <div class="dash-body desktops-screen">
-	<div class="side-navbar" fxLayout="column">
+	<app-sidebar></app-sidebar>
+	<!-- <div class="side-navbar" fxLayout="column">
             
         <a [routerLink]="['/docType']">
 			{{'Common_all_page.home' | translate}}
@@ -64,7 +66,7 @@
 			</div><br>
 			<span>&#169; {{'Common_all_page.side_nav_footer_upper_line' | translate}}<br>{{'Common_all_page.side_nav_footer_bottom_line' | translate}}</span>
 		</div>
-	</div>
+	</div> -->
 	<div class="rest-body" fxLayout="column" style="float: right;">
 		<div class="dash-subheader">
 			<div class="text-subheader">{{'dashboard_page.dash_subheader' | translate}}</div>

@@ -120,7 +120,7 @@ export class ProfileComponent implements OnInit {
 
   init() {
     this.blueBody = true;
-    this.initialize();
+    //this.initialize();
   }
 
   addEvent(type: any, event: any) {

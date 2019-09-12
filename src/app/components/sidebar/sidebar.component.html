@@ -1,0 +1,21 @@
+<div class="side-navbar" fxLayout="column"> 
+        <a [routerLink]="['/docType']">
+			{{'Common_all_page.home' | translate}}
+		</a>
+		<a [routerLink]="['/dashboard']" style="background-color: #f1f1f1;margin-top: 26px;">
+			{{'Common_all_page.files' | translate}}
+		</a>
+        <a [routerLink]="['/consentManagement']" style="margin-top: 26px;">
+			{{'Common_all_page.consent_mgmt' | translate}}
+		</a>
+		<div class="diro-info">
+			<span class="download-diro-text">{{'Common_all_page.download_diro_app' | translate}}</span><br>
+			<div style="width: 100%;" layout="row" layout-align="center">
+				<a href="https://itunes.apple.com/in/app/diro-identity/id1408537104?mt=8" target="blank"><img src="assets/images/img-appstore.png" style=" width: 122px; height: 36px; object-fit: contain;"></a>
+			</div><br>
+			<div style="width: 100%;" fxLayout="row" fxLayoutAlign="center">
+				<a href="https://play.google.com/store/apps/details?id=com.diro.kyc" target="blank"><img src="assets/images/img-playstore.png" style=" width: 122px; height: 36px; object-fit: contain;"></a>
+			</div><br>
+			<span>&#169; {{'Common_all_page.side_nav_footer_upper_line' | translate}}<br>{{'Common_all_page.side_nav_footer_bottom_line' | translate}}</span>
+		</div>
+	</div>
