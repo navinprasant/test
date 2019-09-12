@@ -1,1 +1,95 @@
 <p>mobileprofile works!</p>
+
+<!-- <div class="menu-for-mobile">
+	    <img class="emoji-bg-one" src="icons/emoji-bg-one.svg">
+        <img class="emoji-bg-two" src="icons/emoji-bg-two.svg">
+        <img class="emoji-bg-three" src="icons/emoji-bg-three.svg">
+        <img class="emoji-bg-four" src="icons/emoji-bg-four.svg">
+	<div layout="column">
+		<div class="close-menu" ng-click="closeMenu()">X</div>
+		<img src="images/Logo_big.svg">
+		<div class="menu-links">
+			<a href="/docType">{{'Common_all_page.home' | translate}}</a>
+		</div>
+		<div class="menu-links">
+			<a href="/dashboard">{{'Common_all_page.files' | translate}}</a>
+		</div>
+
+		<div class="menu-links">
+			<a href="/consentManagement">{{'Common_all_page.consent_mgmt' | translate}}</a>
+		</div>
+	</div>
+	<div layout="row" layout-align="center">
+	    <div class="links-on-menu" layout="column" style="position: absolute;bottom: 10px">
+		      <div layout="row" layout-align="center">
+			        <img src="images/img-appstore.png" class="app-store" ng-click="loadAppStore()" style="outline: none;">
+			        <img src="images/img-playstore.png" class="play-store" ng-click="loadPlayStore()" style="outline: none;">
+		      </div>
+	          <span>&copy; {{'Common_all_page.footer_text' | translate}}</span>
+	    </div>
+  	</div>    
+</div> -->
+
+<!-- mobilemenu html ends -->
+
+
+<!-- <div class="mobile-profile-screen-class">
+        <div layout="row" class="profile-header-cover">
+            <div style="width: 20%; z-index: 22;"><img src="images/Repeat Grid 10.svg" ng-click="gotomenu()"></div>
+            <div class="profile-header-class">{{'profile_edit_page.my_profile' | translate}}</div>
+            <div style="width: 20%; float: left;"></div>
+        </div>
+        <div class="profile-cover">
+            <div layout="row" layout-align="space-between">
+                <div class="heading-profile">{{'profile_edit_page.profile_info' | translate}}</div>
+                <div><img src="images/ic_edit.svg" ng-click="goEditProfile()"></div>
+            </div>
+            <div layout="row" style="margin-top: 30px;">
+                <div layout="column">
+                    <img src="icons/ic-avatar.svg" class="mpro-image" ng-if="!user.data.profileImage">
+                    <img src="{{user.data.profileImage}}" class="mpro-image" ng-if="user.data.profileImage">
+                    <img src="images/ic_verified.svg" style="margin-top: -26px; margin-left: 42px;">
+                </div>
+                <div layyout="column" style="margin-left: 20px;">
+                    <div class="profile-name">{{user.data.doc.firstname + ' ' + user.data.doc.lastname}}</div>
+                    <div class="dob"><span class="dob-label">DOB&nbsp:&nbsp</span>{{user.data.doc.dob}}</div>
+                    <div class="member-scence"><span class="member-sence-label">{{'profile_edit_page.member_since' | translate}}&nbsp:&nbsp</span>{{memberSince}}</div>
+                </div>
+            </div>
+            <div layout="column"  class="profile-info" style="margin-top: 30px;">
+                <div layout="row">
+                    <div class="span-labl">{{'profile_edit_page.phone' | translate}}&nbsp&nbsp:&nbsp&nbsp</div>
+                    <div class="info" >{{user.data.doc.mcc + ' ' + user.data.doc.mobile}}</div>
+                </div>
+                <div layout="row">
+                    <div class="span-labl">&nbsp{{'form_page.input_email' | translate}}&nbsp&nbsp:&nbsp&nbsp</div>
+                    <div class="info">{{user.data.doc.email}}</div>
+                </div>
+                <div layout="row">
+                    <div class="span-labl">&nbsp&nbsp{{'wallet_enter_page.input_public_br_address' | translate}}&nbsp&nbsp:&nbsp&nbsp</div>
+                    <div class="info">{{user.data.doc.address.street + ", " + user.data.doc.address.city + ", " + user.data.doc.address.state + ", " + user.data.doc.address.country + " " + user.data.doc.address.zip}}</div>	
+                </div>
+            </div>
+            <hr>
+            <div class="kyc-status" ng-if="kycFiles && kycFiles.length > 0">{{'profile_edit_page.kyc_status' | translate}}</div>
+            <div layout="column">
+                <div layout="row" ng-repeat="x in kycFiles">
+                    <div class="status-kyc">
+                        <img src="images/ic_verify.svg" style="margin-right: 10px" ng-if="x.status == 'verified' && x.cvd == false">
+                        <img src="icons/ic-processing.svg" style="margin-right: 10px;" ng-if="x.status == 'pending'">
+                        <img src="images/ic_verify (1).svg" style="margin-right: 10px" ng-if="x.status == 'verified' && x.cvd == true">
+                        <img src="icons/ic-rejected-doc.svg" style="margin-right: 10px;" ng-if="x.status == 'rejected'">
+                        <span ng-if="x.category == 'idProof'">ID Proof</span>
+                        <span ng-if="x.category == 'addressProof'">Address Proof</span>
+                        <span ng-if="x.category == 'bankstatement'">Bank Statement</span>
+                        <span ng-if="x.category == 'other'">Other</span>
+                    </div>
+                    <div class="status-value" ng-init="filename = getFilename(x.name)">{{filename}}</div>
+                </div>
+            </div>
+        </div>
+        <img class="emoji-bg-one" src="icons/emoji-bg-one.svg">
+        <img class="emoji-bg-two" src="icons/emoji-bg-two.svg">
+        <img class="emoji-bg-three" src="icons/emoji-bg-three.svg">
+        <img class="emoji-bg-four" src="icons/emoji-bg-four.svg">
+    </div> -->

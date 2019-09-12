@@ -1,1 +1,153 @@
 <p>consent-management works!</p>
+
+<!-- <header class="header hide-on-mobile-screens">
+        <div class="row">
+            <div class="col-sm-2 col-xs-3 col-lg-1 col-md-1">
+                <img src="icons/logo-diro.svg" class="logo-diro">	
+            </div>	
+            <div class="col-sm-7 col-xs-5 col-lg-9 col-md-9">
+                <div class="center-heading" layout="column">
+                    <div class="diro-kyc" style="margin-top: 10px;">{{'consent_management_page.header_text' | translate}}</div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-4 col-lg-2 col-md-2" layout="row" layout-align="end">
+                <div class="profile-part" style="float: right" layout="column">
+                    <div><img src="images/user.png" class="user-logo" ng-click="showPro()" ng-if="userPro == undefined"></div>
+                    <div><img src="{{userPro}}" class="user-logo" ng-click="showPro()" ng-if="userPro != undefined"></div>
+                    <div style="width: 100%;" ng-hide="proVisible">
+                        <div class="pro-triangle"></div>
+                    </div>
+                    <div class="pro-card" layout="column" ng-hide="proVisible">
+                        <div class="pro-info" style="margin-bottom: 23px;padding-left: 33px;" layout="row">
+                            <img src="images/user.png" class="user-logo-sq" ng-if="userPro == undefined">
+                            <img src="{{userPro}}" class="user-logo-sq" ng-if="userPro != undefined">
+                            <div class="text-info-pro" layout="column">
+                                <span class="name">{{userName}}</span>
+                                <span class="contact">{{userMCC + " " +userMobile}}</span>
+                                 <a class="view-pro" layout="column" layout-align="center" href="/profile">{{'Common_all_page.view_profile' | translate}}</a>
+                            </div>
+                        </div>
+                        <md-divider></md-divider>
+                        <div class="card-text">
+                            {{'Common_all_page.legal_notice' | translate}}
+                        </div>
+                        <div class="card-text">
+                            {{'Common_all_page.help' | translate}}
+                        </div>
+                        <div class="card-text" layout="row" sign-out>
+                            <img src="icons/ic-logout.svg" class="ic-logout">
+                            <span>{{'Common_all_page.sign_out' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+    </header>
+    <div class="dash-body hide-on-mobile-screens">
+        <div class="side-navbar" layout="column">
+            <a href="/docType">
+                {{'Common_all_page.home' | translate}}
+            </a>
+            <a href="/dashboard" style="margin-top: 26px;">
+                {{'Common_all_page.files' | translate}}
+            </a>
+
+            <a href="/consentManagement" style="margin-top: 26px;background-color: #f1f1f1;">
+                {{'Common_all_page.consent_mgmt' | translate}}
+            </a>
+
+            <div class="diro-info">
+                <span class="download-diro-text">{{'Common_all_page.download_diro_app' | translate}}</span><br>
+                <div style="width: 100%;" layout="row" layout-align="center">
+                    <a href="https://itunes.apple.com/in/app/diro-identity/id1408537104?mt=8" target="blank"><img src="images/img-appstore.png" style=" width: 122px; height: 36px; object-fit: contain;"></a>
+                </div><br>
+                <div style="width: 100%;" layout="row" layout-align="center">
+                    <a href="https://play.google.com/store/apps/details?id=com.diro.kyc" target="blank"><img src="images/img-playstore.png" style=" width: 122px; height: 36px; object-fit: contain;"></a>
+                </div><br>
+                <span>&#169; {{'Common_all_page.side_nav_footer_upper_line' | translate}}<br>{{'Common_all_page.side_nav_footer_bottom_line' | translate}}</span>
+            </div>
+        </div>
+        <div class="rest-body" layout="column" style="float: right;">
+            <md-progress-circular class="action-loader" md-mode="indeterminate" ng-hide="actionLoader"></md-progress-circular>
+            <div class="dash-subheader">
+                <div class="text-subheader">{{'consent_management_page.consent_management' | translate}}</div>
+            </div>
+            <div style="margin-top: 154px;position: relative;z-index: 0;">
+            </div>
+            <div class="consent-request-rectangle" layout="column" ng-repeat="x in orgsList.pendingrequest">
+                <div> <span class="requester-name">{{x.orgname}}</span> {{'consent_management_page.sent_request' | translate}} </div>
+                <div layout="row">
+                    <img src="icons/default-org-logo.svg" class="bank-image" ng-if="x.url == undefined || x.url == null || x.url == ''">
+                    <img src="{{x.url}}" class="bank-image" ng-if="x.url != undefined && x.url != null && x.url != ''">
+                    <div layout="column" flex>
+                        <div class="request-title">{{x.orgname}}</div>
+                        <div class="request-time" ng-init="time = getRequestTime(x.crtime)">{{time}}</div>
+                    </div>
+                    <md-button class="md-raised accept-req-button" ng-click="acceptOrgReq(x,$index)">{{'consent_management_page.accept_button' | translate}}</md-button>
+                    <md-button class="md-raised reject-req-button" ng-click="rejectOrgReq(x,$index)">{{'consent_management_page.reject_button' | translate}}</md-button>
+                </div>
+            </div>
+            <div class="consent-orgs-rect" layout="column" ng-hide="allOrgsrect">
+                <div class="rect-text" layout="row">
+                    <div flex>{{'consent_management_page.manage_org' | translate}}</div>
+                    <div class="light-text">{{'consent_management_page.keep_uptodate' | translate}}</div>
+                </div>
+                <div class="org-row" layout="row" ng-repeat="x in orgsList.allorgdetail">
+                    <img src="icons/default-org-logo.svg" class="row-pic" ng-if="x.url == undefined || x.url == null || x.url == ''">
+                    <img src="{{x.url}}" class="row-pic" ng-if="x.url != undefined && x.url != null && x.url != ''">
+                    <div layout="column" flex>
+                        <div class="org-name">{{x.orgname}}</div>
+                        <div ng-init="time = getRequestTime(x.eptime)">{{time}}</div>
+                    </div>
+                    <a href="{{x.boardurl}}" ng-if="x.status == true && x.boardurl"><md-button class="md-raised go-to-board-btn">{{'consent_management_page.go_to_board' | translate}}</md-button></a>
+                    <md-switch ng-model="x.status" class="org-switch" ng-change="changeSwitchStatus(x,x.status,$index)">
+                      </md-switch>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div>Code for mobile screens</div> -->
+    <!-- <div class="mobiles-screens mobile-screen-consent-mnt doc-type-body" layout="column" style="float: right;">
+        <md-progress-circular class="action-loader" md-mode="indeterminate" ng-hide="actionLoader"></md-progress-circular>
+            <div layout="row" layout-align="center center" class="consent-header-cover">
+                <div style="width: 20%; z-index: 22"><img src="images/Repeat Grid 10.svg" ng-click="gotomenu()"></div>
+                <div class="consent-header-class">{{'consent_management_page.header_text' | translate}}</div>
+                <div style="width: 20%"></div>
+            </div>
+            <div class="consent-request-rectangle" layout="column" ng-repeat="x in orgsList.pendingrequest">
+                <div> <span class="requester-name">{{x.orgname}}</span> {{'consent_management_page.sent_request' | translate}} </div>
+                <div layout="row">
+                    <img src="icons/default-org-logo.svg" class="bank-image" ng-if="x.url == undefined || x.url == null || x.url == ''">
+                    <img src="{{x.url}}" class="bank-image" ng-if="x.url != undefined && x.url != null && x.url != ''">
+                    <div layout="column" flex>
+                      <div class="request-title">{{x.orgname}}</div>
+                      <div class="request-time" ng-init="time = getRequestTime(x.crtime)">{{time}}</div>
+                    </div>
+               </div>
+               <div layout="row" layout-align="end">
+                    <md-button class="md-raised accept-req-button" ng-click="acceptOrgReq(x,$index)">{{'consent_management_page.accept_button' | translate}}</md-button>
+                    <md-button class="md-raised reject-req-button" ng-click="rejectOrgReq(x,$index)">{{'consent_management_page.reject_button' | translate}}</md-button>
+               </div>
+            </div>
+            <div class="consent-orgs-rect" layout="column" ng-hide="allOrgsrect">
+                <div class="rect-text" layout="row">
+                    <div flex>{{'consent_management_page.manage_org' | translate}}</div>
+                    <div class="light-text">{{'consent_management_page.keep_uptodate' | translate}}</div>
+                </div>
+                <div class="org-row" layout="row" ng-repeat="x in orgsList.allorgdetail">
+                    <img src="icons/default-org-logo.svg" class="row-pic" ng-if="x.url == undefined || x.url == null || x.url == ''">
+                    <img src="{{x.url}}" class="row-pic" ng-if="x.url != undefined && x.url != null && x.url != ''">
+                    <div layout="column" flex>
+                        <div class="org-name">{{x.orgname}}</div>
+                        <div ng-init="time = getRequestTime(x.eptime)">{{time}}</div>
+                    </div>
+                    <a href="{{x.boardurl}}" ng-if="x.status == true && x.boardurl"><md-button class="md-raised go-to-board-btn">{{'consent_management_page.go_to_board' | translate}}</md-button></a>
+                    <md-switch ng-model="x.status" class="org-switch" ng-change="changeSwitchStatus(x.orgid,x.status,$index)">
+                      </md-switch>
+                </div>
+            </div>
+            <img class="emoji-bg-one" src="icons/emoji-bg-one.svg">
+            <img class="emoji-bg-two" src="icons/emoji-bg-two.svg">
+            <img class="emoji-bg-three" src="icons/emoji-bg-three.svg">
+            <img class="emoji-bg-four" src="icons/emoji-bg-four.svg">
+    </div> -->
