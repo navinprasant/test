@@ -114,7 +114,6 @@
 							<td class="input-label">{{'docLinks_page.country_placeholder' | translate}}</td>
 							<td class="input-cell">
 								<mat-form-field class="full-input" floatLabel="never" appearance="outline">
-									<!-- <mat-label floatLabel="never">Country</mat-label> -->
 									<mat-select [(ngModel)]="addressCountry" name="country" placeholder="Country">
 											<mat-option *ngFor="let c of allCountries" [value]="c.country">
 													{{c.country}}
@@ -138,8 +137,7 @@
 							<td class="input-label">{{'docLinks_page.state_placeholder' | translate}}</td>
 							<td class="input-cell">
 								<mat-form-field class="full-input" appearance="outline">
-									<!-- <mat-label>State</mat-label> -->
-									<mat-select [(ngModel)]="selectedValue" name="state" floatLabel="never">
+									<mat-select [(ngModel)]="addressState" name="state" floatLabel="never">
 											<mat-option *ngFor="let s of allStates" [value]="s">
 													{{s}}
 											</mat-option>

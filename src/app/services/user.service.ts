@@ -15,14 +15,10 @@ export class UserService {
   ) { }
 
   verifyUserOTP(data:any) :Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        // 'dataType':  'application/json',
-        // 'crossDomain': 'true',
-      })
-    };
-    return this.http.post<any>(environment.sendotp, data, httpOptions);
+    return this.http.post<any>(environment.sendotp, data, {
+      headers: new HttpHeaders({'Content-Type': 'application/json'}),
+      observe: 'response'
+    });
    }
 
    updateUserProfileInfo (data: any) {
@@ -38,22 +34,11 @@ export class UserService {
    }
 
    postImage (data: any) {
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type':  'application/json',
-    //     'dataType':  'application/json',
-    //   })
-    // };
+
     return this.http.post<any>(environment.postimage, data, {observe: 'response'});
    }
 
    getUserKycInfo(data: any) {
-    // method: "POST",
-    // url: url.getuserkycinfo,
-    // data: {"mxid":user.data.mxid},
-    // headers:{
-    //     'Authorization': $scope.token
-    // }
     let token = localStorage.getItem('saveToken');
     const httpOptions = {
       headers: new HttpHeaders({

@@ -49,6 +49,7 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { MaterialModule } from './material/material.module';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { SuccessComponent } from './dialogs/success/success.component';
 
 let config = new AuthServiceConfig([
   {
@@ -98,7 +99,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WalletDashboardComponent,
     WalletDetailsComponent,
     WalletEntryComponent,
-    TestComponent
+    TestComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -123,6 +125,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxMatSelectSearchModule,
     MaterialModule,
     SocialLoginModule
+  ],
+  entryComponents: [
+    SuccessComponent
   ],
   providers: [
     {

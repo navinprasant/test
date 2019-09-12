@@ -7,6 +7,8 @@ import { DocTypeComponent } from './components/doc-type/doc-type.component';
 import { CvdInfoComponent } from './components/cvd-info/cvd-info.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ConsentManagementComponent } from './components/consent-management/consent-management.component';;
 
 const appRoutes: Routes = [
   { path: 'login', component: SigninComponent },
@@ -22,7 +24,7 @@ const appRoutes: Routes = [
   { path: 'walletDash', component: KycFormComponent },
   { path: 'walletAdd', component: KycFormComponent },
   { path: 'walletDetails', component: KycFormComponent },
-  { path: 'consentManagement', component: KycFormComponent },
+  { path: 'consentManagement', component: ConsentManagementComponent },
   { path: 'exchangeform', component: KycFormComponent },
   { path: 'selfinvite/:apikey', component: KycFormComponent },
   { path: 'docType', component:DocTypeComponent },
@@ -40,6 +42,7 @@ const appRoutes: Routes = [
   { path: 'countrylist', component: KycFormComponent },
   { path: 'redirectad', component: KycFormComponent },
   { path: 'boards/:token/:btnid', component: KycFormComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

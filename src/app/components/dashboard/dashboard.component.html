@@ -1,1 +1,178 @@
-<p>dashboard works!</p>
+<!-- <header class="header desktops-screen">
+	<div class="row">
+		<div class="col-sm-2 col-xs-3 col-lg-1 col-md-1">
+			<img src="icons/logo-diro.svg" class="logo-diro">	
+		</div>	
+		<div class="col-sm-7 col-xs-5 col-lg-9 col-md-9">
+			<div class="center-heading" layout="column">
+				<div class="diro-kyc">{{'Common_all_page.diro_kyc' | translate}}</div>
+				<div class="subheading">{{'Common_all_page.header_text' | translate}}</div>
+			</div>
+		</div>
+		<div class="col-sm-3 col-xs-4 col-lg-2 col-md-2" layout="row" layout-align="end">
+			<div class="profile-part" style="float: right" layout="column">
+				<div><img src="images/user.png" class="user-logo" ng-click="showPro()" ng-if="userPro == undefined"></div>
+				<div><img src="{{userPro}}" class="user-logo" ng-click="showPro()" ng-if="userPro != undefined"></div>
+				<div style="width: 100%;" ng-hide="proVisible">
+					<div class="pro-triangle"></div>
+				</div>
+				<div class="pro-card" layout="column" ng-hide="proVisible">
+					<div class="pro-info" style="margin-bottom: 23px;padding-left: 33px;" layout="row">
+						<img src="images/user.png" class="user-logo-sq" ng-if="userPro == undefined">
+						<img src="{{userPro}}" class="user-logo-sq" ng-if="userPro != undefined">
+						<div class="text-info-pro" layout="column">
+							<span class="name">{{userName}}</span>
+							<span class="contact">{{userMCC + " " +userMobile}}</span>
+ 							<a class="view-pro" layout="column" layout-align="center" href="/profile">{{'Common_all_page.view_profile' | translate}}</a>
+						</div>
+					</div>
+					<md-divider></md-divider>
+					<div class="card-text">
+						{{'Common_all_page.legal_notice' | translate}}
+					</div>
+					<div class="card-text">
+						{{'Common_all_page.help' | translate}}
+					</div>
+					<div class="card-text" layout="row" sign-out>
+						<img src="icons/ic-logout.svg" class="ic-logout">
+						<span>{{'Common_all_page.sign_out' | translate}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</header> -->
+<div class="dash-body desktops-screen">
+	<div class="side-navbar" fxLayout="column">
+            
+        <a [routerLink]="['/docType']">
+			{{'Common_all_page.home' | translate}}
+		</a>
+		<a [routerLink]="['/dashboard']" style="background-color: #f1f1f1;margin-top: 26px;">
+			{{'Common_all_page.files' | translate}}
+		</a>
+        <a [routerLink]="['/consentManagement']" style="margin-top: 26px;">
+			{{'Common_all_page.consent_mgmt' | translate}}
+		</a>
+		<div class="diro-info">
+			<span class="download-diro-text">{{'Common_all_page.download_diro_app' | translate}}</span><br>
+			<div style="width: 100%;" layout="row" layout-align="center">
+				<a href="https://itunes.apple.com/in/app/diro-identity/id1408537104?mt=8" target="blank"><img src="assets/images/img-appstore.png" style=" width: 122px; height: 36px; object-fit: contain;"></a>
+			</div><br>
+			<div style="width: 100%;" fxLayout="row" fxLayoutAlign="center">
+				<a href="https://play.google.com/store/apps/details?id=com.diro.kyc" target="blank"><img src="assets/images/img-playstore.png" style=" width: 122px; height: 36px; object-fit: contain;"></a>
+			</div><br>
+			<span>&#169; {{'Common_all_page.side_nav_footer_upper_line' | translate}}<br>{{'Common_all_page.side_nav_footer_bottom_line' | translate}}</span>
+		</div>
+	</div>
+	<div class="rest-body" fxLayout="column" style="float: right;">
+		<div class="dash-subheader">
+			<div class="text-subheader">{{'dashboard_page.dash_subheader' | translate}}</div>
+		</div>
+		<div class="subheading-row" fxLayout="row">
+			<div style="margin-top: -2px;" hidden><input type="checkbox" class="checkbox"></div>
+			<div class="sort-list-wrapper" fxLayout="row">
+				<span class="sort-list-text">{{'dashboard_page.row_title_name' | translate}}</span>
+				<div class="sort-list-icon" style="margin-left: 7px;"><img src="assets/icons/ic-descending.svg"></div>
+			</div>
+			<div class="subheading-row-size">{{'dashboard_page.row_title_type' | translate}}</div>
+			<div class="subheading-row-type">{{'dashboard_page.row_title_status' | translate}}</div>
+			<div class="subheading-row-date">{{'dashboard_page.row_title_date' | translate}}</div>
+			<div class="subheading-row-action">{{'dashboard_page.row_title_action' | translate}}</div>
+		</div>
+		<div style="margin-top: 194px;position: relative;z-index: 0;">
+			<div>
+				<div class="list-row" *ngFor="let x of uploadedFiles" layout="row">
+					<div style="margin-top: 11px;" hidden><input type="checkbox" class="checkbox"></div>
+					<div class="name-doc-wrapper" fxLayout="row" (click)="viewDoc(x)">
+						<img src="assets/images/ic-pdf.jpg" class="pdf-icon">
+						<div fxLayout="column">
+							<span class="pdf-name" >{{fileName}} filename</span>
+							<span class="pdf-size" >{{fileSize}} filesize</span>
+						</div>
+					</div>
+					<div class="doc-size" *ngIf="x.category == 'idProof' || x.category == 'idproof'" (click)="viewDoc(x)">{{'Common_all_page.id_proof' | translate}}</div>
+					<div class="doc-size" *ngIf="x.category == 'addressProof'" (click)="viewDoc(x)">{{'Common_all_page.address_proof' | translate}}</div>
+					<div class="doc-size" *ngIf="x.category == 'other'" (click)="viewDoc(x)">{{'Common_all_page.other' | translate}}</div>
+					<div class="doc-size" *ngIf="x.category == 'bankstatement'" (click)="viewDoc(x)">{{'Common_all_page.bank_statement' | translate}}</div>
+					<div class="doc-type" (click)="viewDoc(x)">
+						<div layout="row" *ngIf="x.status == 'verified'">
+							<div class="circle-status"></div>
+							<div class="status-title">{{'dashboard_page.approved_status' | translate}}</div>
+						</div>
+						<div layout="row" *ngIf="x.status == 'pending'">
+							<div class="circle-status" style="border: solid 1.5px #ff9800;"></div>
+							<div class="status-title" style="color: #ff9800;">{{'dashboard_page.pending_status' | translate}}</div>
+						</div>
+						<div layout="row" *ngIf="x.status == 'rejected'">
+							<div class="circle-status" style="border: solid 1.5px #f44336;"></div>
+							<div class="status-title" style="color: #f44336;">{{'dashboard_page.rejected_status' | translate}}</div>
+						</div>
+					</div>
+					<div class="doc-date"  (click)="viewDoc(x)">{{fileTime}} filetime</div>
+					<div class="doc-action" fxLayout="column">
+						<img src="assets/icons/ic-more.svg"  class="action-more" (click)="showActionMenu($index,uploadedFiles.length)" id="myDiv">
+						<div class="action-menu" style="height: 100px;" fxLayout="column"  hidden>
+								<a id="dlink" style="height: 32px;width: 145px;color: rgb(0,0,0);"><span class="action-menu-item" (click)="downloadDoc(x)">{{'dashboard_page.menu_item_download' | translate}}</span></a>
+							<span class="action-menu-item" (click)="viewDoc(x)">{{'dashboard_page.menu_item_view' | translate}}</span>
+							<span class="action-menu-item" style="color: rgb(244, 67, 54);" (click)="delDoc(x,$index)">{{'dashboard_page.menu_item_delete' | translate}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div show-sm class="documents-mobile-screens">
+	<div  fxLayout="column" >
+		<div fxLayout="row" fxLayoutAlign="center">
+		    <div class="left-div"><img src="assets/images/Repeat Grid 10.svg" width="20" style="margin-top: 23px; margin-left: 30px" (click)="gotomenu()"></div>
+		    <div class="documents-heading-mobile">My Documents</div>
+		    <div class="right-div"></div>
+		</div>
+		<div class="documents-scroll-auto" style="height:{{mobilebrowserheight}}px;">
+			<div *ngFor="let x of uploadedFiles" fxLayout="row" fxLayoutAlign="space-between" class="documents-row-mobile-screen">
+				<div fxLayout="row" (click)="viewDoc(x)">
+					<img src="assets/images/ic-pdf.jpg" class="pdf-icon-mobile-screen">
+					<div fxLayout="column" style="margin-left: 20px;">
+						<span class="pdf-name">{{fileName}} fileName</span>
+						<div class="doc-size" *ngIf="x.category == 'idProof' || x.category == 'idproof'" (click)="viewDoc(x)">{{'Common_all_page.id_proof' | translate}}</div>
+					    <div class="doc-size" *ngIf="x.category == 'addressProof'" (click)="viewDoc(x)">{{'Common_all_page.address_proof' | translate}}</div>
+					    <div class="doc-size" *ngIf="x.category == 'other'" (click)="viewDoc(x)">{{'Common_all_page.other' | translate}}</div>
+					    <div class="doc-size" *ngIf="x.category == 'bankstatement'" (click)="viewDoc(x)">{{'Common_all_page.bank_statement' | translate}}</div>
+					    <div class="doc-type" (click)="viewDoc(x)">
+							<div fxLayout="row" *ngIf="x.status == 'verified'">
+								<div class="circle-status-mobile"></div>
+								<div class="status-title">{{'dashboard_page.approved_status' | translate}}</div>
+							</div>
+							<div fxLayout="row" *ngIf="x.status == 'pending'">
+								<div class="circle-status-mobile" style="border: solid 1.5px #ff9800;"></div>
+								<div class="status-title" style="color: #ff9800;">{{'dashboard_page.pending_status' | translate}}</div>
+							</div>
+							<div fxLayout="row" *ngIf="x.status == 'rejected'">
+								<div class="circle-status-mobile" style="border: solid 1.5px #f44336;"></div>
+								<div class="status-title" style="color: #f44336;">{{'dashboard_page.rejected_status' | translate}}</div>
+							</div>
+					   	</div>	
+					</div>
+				</div>
+				<div fxLayout="column" fxLayoutAlign="center end">
+					<div class="doc-action" fxLayout="column">
+						<img src="assets/icons/ic-more.svg"  class="action-more-mobile" (click)="showActionMenu($index,uploadedFiles.length)" id="myDiv">
+						<div class="action-menu" style="height: 100px;" fxLayout="column"  hidden>
+							<a id="dlink" style="height: 22px;width: 145px;color: rgb(0,0,0);"><span class="action-menu-item" (click)="downloadDoc(x)">{{'dashboard_page.menu_item_download' | translate}}</span></a>
+							<span class="action-menu-item" style="height: 21px;" (click)="viewDoc(x)">{{'dashboard_page.menu_item_view' | translate}}</span>
+							<span class="action-menu-item" style="color: rgb(244, 67, 54);" (click)="delDoc(x,$index)">{{'dashboard_page.menu_item_delete' | translate}}</span>
+						</div>
+					</div>
+					<span class="pdf-size">{{fileSize}} filesize</span>
+					<div class="doc-date" (click)="viewDoc(x)">{{fileTime}} fileTime</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<img class="emoji-bg-one" src="assets/icons/emoji-bg-one.svg" style="z-index: 0;">
+	<img class="emoji-bg-two" src="assets/icons/emoji-bg-two.svg" style="z-index: 0;">
+	<img class="emoji-bg-three" src="assets/icons/emoji-bg-three.svg" style="z-index: 0;">
+	<img class="emoji-bg-four" src="assets/icons/emoji-bg-four.svg" style="z-index: 0;">
+</div>

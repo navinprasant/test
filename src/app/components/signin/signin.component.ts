@@ -171,29 +171,30 @@ export class SigninComponent implements OnInit {
         console.log("sendotp success response");
         console.log("send otp response *******************", response);
         console.log("send otp response ******************* message", response);
-        if (response.message == "demo") {
-          if (response.mxid == undefined || response.mxid == "undefined") {
+        if (response.body.message == "demo") {
+          if (response.body.mxid == undefined || response.body.mxid == "undefined") {
             document.body.style.opacity = "1";
             console.log(1);
             this.commonService.stopLoader();
             this.router.navigate(['/form']);
             console.log("after redirecting");
-            localStorage.setItem("saveRawMX", JSON.stringify(response.rawmx));
+            localStorage.setItem("saveRawMX", JSON.stringify(response.body.rawmx));
           }
           else {
-            localStorage.setItem("saveAllUserData", JSON.stringify(response));
-            localStorage.setItem("saveFileData", JSON.stringify(response.data.kycDoc));
-            if (response.data.token == undefined || response.data.token == null || response.data.token == "") {
-              localStorage.setItem("saveToken", response.headers('Authorization'));
+            localStorage.setItem("saveAllUserData", JSON.stringify(response.body));
+            localStorage.setItem("saveFileData", JSON.stringify(response.body.kycDoc));
+            if (response.body.token == undefined || response.body.token == null || response.body.token == "") {
+              console.log("headers",response.headers.get('Authorization'))
+              localStorage.setItem("saveToken", response.headers.get('Authorization'));
             }
             else {
-              localStorage.setItem("saveToken", response.data.token);
+              localStorage.setItem("saveToken", response.body.token);
             }
             this.orgService.orgDetail().subscribe(response => {
                document.body.style.opacity = "1";
                this.commonService.stopLoader();
-               console.log(2);
-            	if(response.data.pendingrequest.length > 0) {
+               console.log('orgdetail response', response);
+            	if(response.pendingrequest.length > 0) {
             		this.router.navigate(['/consentManagement']);
               }
               else {
@@ -208,9 +209,8 @@ export class SigninComponent implements OnInit {
         else {
           document.body.style.opacity = "1";
           this.commonService.stopLoader();
-          console.log(3);
-          if (response.rawmx != undefined && response.rawmx != null && response.rawmx != "") {
-            localStorage.setItem("rawmx", JSON.stringify(response.data.rawmx));
+          if (response.body.rawmx != undefined && response.body.rawmx != null && response.body.rawmx != "") {
+            localStorage.setItem("rawmx", JSON.stringify(response.body.rawmx));
             this.router.navigate(['/verifyOrgOtp']);
           }
           else {

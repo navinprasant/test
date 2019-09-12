@@ -33,13 +33,6 @@ export class CommonService {
   }
  
   getDocStatus(docData: any) {
-
-    // method: "POST",
-    // url: url.getdocstatus,
-    // data: {"mxid":response.data.mxid},
-    // headers:{
-    //     'Authorization': $scope.token
-    // }
     let user = JSON.parse(localStorage.getItem("saveAllUserData"));
     const token = localStorage.getItem("saveToken");
     let data = { "mxid": user.mxid, "mobile": user.doc.mobile };
@@ -49,6 +42,26 @@ export class CommonService {
       })
     };
     return this.http.post<any>(environment.getdocstatus, data, httpOptions);
+  }
+
+  deleteDocument(data: any) {
+    const token = localStorage.getItem("saveToken");
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': token
+      })
+    };
+    return this.http.post<any>(environment.deletedoc, data, httpOptions);
+  }
+
+  downloadDocument(data: any) {
+    const token = localStorage.getItem("saveToken");
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': token
+      })
+    };
+    return this.http.post<any>(environment.download, data, httpOptions);
   }
 
 

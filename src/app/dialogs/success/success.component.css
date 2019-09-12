@@ -1,0 +1,29 @@
+.btns {
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    background-color: #fdb828;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 24px;
+    border: solid 1px #d4d6d9;
+    /* background-color: #fdb828 color: rgba(0, 0, 0, 0.84); */
+    padding: 0px 15px 0px 15px;
+    margin-bottom: 15px;
+}
+
+
+.mat-typography {
+    width: 333px;
+    height: auto;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.84);
+}
